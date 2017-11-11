@@ -1,0 +1,5 @@
+genie:
+  dbConfig:
+    # Uses MySQL.
+    database: HUBMED
+    host: localhost

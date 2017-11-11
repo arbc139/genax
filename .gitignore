@@ -1,0 +1,6 @@
+**/node_modules/**
+*.out
+*.log
+*.pyc
+*.DS_Store
+**/package-lock.json

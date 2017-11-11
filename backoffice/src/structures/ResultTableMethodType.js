@@ -1,0 +1,4 @@
+export default {
+  coOccurence: 'RESULT_TABLE_METHOD_TYPE_CO_OCCURENCE',
+  coOccurenceSingle: 'RESULT_TABLE_METHOD_TYPE_CO_OCCURENCE_SINGLE',
+};
