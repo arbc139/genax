@@ -27,6 +27,7 @@
         md-align="center"
         md-vertical-align="center"
         md-flex
+        v-show="!showSpinner"
       >
         <md-input-container
           v-for="instruction in instructions"
@@ -36,6 +37,10 @@
           <md-input v-model="instruction.count" readonly />
         </md-input-container>
       </md-layout>
+      <md-spinner
+        md-indeterminate
+        v-show="showSpinner"
+      />
     </md-layout>
   </md-whiteframe>
 </template>
@@ -65,6 +70,9 @@ export default Vue.component('result-status', {
         color: '#000000',
         text: this.$t('result.status.type.yet'),
       };
+    },
+    showSpinner() {
+      return this.status !== ResultStatusType.done;
     },
   },
 });
