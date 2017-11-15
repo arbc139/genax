@@ -1,6 +1,8 @@
 <template>
-  <div>Welcom to GENAX</div>
-  <div>GENAX uses the keywords you enter to dynamically find genes associated with your keywords.</div>
+  <div>
+    <h1>Welcom to GENAX</h1>
+    <p>GENAX uses the keywords you enter to dynamically find genes associated with your keywords.</p>
+  </div>
 </template>
 
 <script>
