@@ -16,7 +16,10 @@
       </md-layout>
     </md-layout>
     <md-layout
-      class="status-count-input-container"
+      :class="{
+        'status-count-input-container': true,
+        'blur': status === ResultStatusType.yet,
+      }"
       md-column
       md-align="start"
       md-vertical-align="start"
@@ -87,6 +90,10 @@ export default Vue.component('result-status', {
 .status-title-container {
   flex: 36px 0 0;
   margin-bottom: 16px;
+}
+
+.blur {
+  filter: blur(2px);
 }
 
 .status-count-input-container {
