@@ -18,7 +18,7 @@
     <md-layout
       :class="{
         'status-count-input-container': true,
-        'blur': status === ResultStatusType.yet,
+        'blur': enableBlurValues,
       }"
       md-column
       md-align="start"
@@ -74,6 +74,9 @@ export default Vue.component('result-status', {
     },
     showSpinner() {
       return this.status === ResultStatusType.running;
+    },
+    enableBlurValues() {
+      return this.status === ResultStatusType.yet;
     },
   },
 });
