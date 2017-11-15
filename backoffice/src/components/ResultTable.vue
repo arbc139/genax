@@ -68,9 +68,6 @@
               <md-table-head md-sort-by="closeness" md-numeric>
                 Closeness
               </md-table-head>
-              <md-table-head md-sort-by="clusteringCoef" md-numeric>
-                Clustering Coef
-              </md-table-head>
               <md-table-head md-sort-by="eigenVector" md-numeric>
                 Eigen Vector
               </md-table-head>
@@ -101,7 +98,6 @@
               <md-table-cell class="genax-numeric">{{ row.degree }}</md-table-cell>
               <md-table-cell class="genax-numeric">{{ row.betweenness }}</md-table-cell>
               <md-table-cell class="genax-numeric">{{ row.closeness }}</md-table-cell>
-              <md-table-cell class="genax-numeric">{{ row.clusteringCoef }}</md-table-cell>
               <md-table-cell class="genax-numeric">{{ row.eigenVector }}</md-table-cell>
               <md-table-cell class="genax-numeric">{{ row.katz }}</md-table-cell>
             </md-table-row>
