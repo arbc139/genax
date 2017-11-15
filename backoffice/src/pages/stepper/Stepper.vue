@@ -110,11 +110,11 @@
 import Vue from 'vue';
 import _ from 'lodash';
 
-import router from '../router';
-import store from '../reducers/Store';
+import router from '../../router';
+import store from '../../reducers/Store';
 
-import HelpFrame from '../components/HelpFrame';
-import Help from '../components/Help';
+import HelpFrame from '../../components/HelpFrame';
+import Help from '../../components/Help';
 import QueryBuilder from './QueryBuilder';
 import Period from './Period';
 import Parameter from './Parameter';

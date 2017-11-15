@@ -73,9 +73,9 @@ import DatePicker from 'vuejs-datepicker';
 
 import moment from 'moment';
 
-import store from '../reducers/Store';
+import store from '../../reducers/Store';
 
-import PeriodType from '../structures/PeriodType';
+import PeriodType from '../../structures/PeriodType';
 
 export default Vue.component('period', {
   components: {

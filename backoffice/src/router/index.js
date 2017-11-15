@@ -1,15 +1,16 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import About from '@/pages/main-tabs/About';
-import Result from '@/pages/Result';
 import Main from '@/pages/Main';
-import MainTabs from '@/pages/main-tabs/MainTabs';
-import Performance from '@/pages/main-tabs/Performance';
-import Stepper from '@/pages/Stepper';
 
-import ResultTable from '@/components/ResultTable';
-import ResultReference from '@/components/ResultReference';
+import About from '@/pages/main-tabs/About';
+import MainTabs from '@/pages/main-tabs/MainTabs';
+import Stepper from '@/pages/stepper/Stepper';
+import Performance from '@/pages/main-tabs/Performance';
+
+import Result from '@/pages/result/Result';
+import ResultTable from '@/pages/result/ResultTable';
+import ResultReference from '@/pages/result/ResultReference';
 
 Vue.use(Router);
 

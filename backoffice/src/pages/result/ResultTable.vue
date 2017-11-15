@@ -122,10 +122,10 @@
 import Vue from 'vue';
 import _ from 'lodash';
 
-import Bus from './Bus';
-import MethodType from '../structures/ResultTableMethodType';
+import Bus from '../../components/Bus';
+import MethodType from '../../structures/ResultTableMethodType';
 
-import pullingConfig from '../configs/pulling';
+import pullingConfig from '../../configs/pulling';
 
 function convertMethodTypeToNetId(methodType) {
   switch (methodType) {

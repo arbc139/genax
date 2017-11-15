@@ -72,12 +72,12 @@
 import _ from 'lodash';
 import moment from 'moment';
 
-import Bus from '../components/Bus';
-import ResultStatus from '../components/ResultStatus';
-import ResultParameter from '../components/ResultParameter';
-import ResultStatusType from '../structures/ResultStatusType';
+import Bus from '../../components/Bus';
+import ResultStatus from './ResultStatus';
+import ResultParameter from './ResultParameter';
+import ResultStatusType from '../../structures/ResultStatusType';
 
-import pullingConfig from '../configs/pulling';
+import pullingConfig from '../../configs/pulling';
 
 function getEssayStatus(statusObj) {
   if (_.isUndefined(statusObj)) {

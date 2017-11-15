@@ -11,7 +11,7 @@
 <script>
 import Vue from 'vue';
 
-import store from '../reducers/Store';
+import store from '../../reducers/Store';
 
 export default Vue.component('email', {
   data() {

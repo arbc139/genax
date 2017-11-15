@@ -49,7 +49,7 @@
 <script>
 import Vue from 'vue';
 
-import ResultStatusType from '../structures/ResultStatusType';
+import ResultStatusType from '../../structures/ResultStatusType';
 
 export default Vue.component('result-status', {
   props: ['title', 'status', 'instructions'],

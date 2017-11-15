@@ -32,10 +32,10 @@ import Vue from 'vue';
 
 import _ from 'lodash';
 
-import store from '../reducers/Store';
+import store from '../../reducers/Store';
 
-import queryCondition from '../components/QueryCondition';
-import { Condition } from '../structures/QueryConditionObject';
+import queryCondition from '../../components/QueryCondition';
+import { Condition } from '../../structures/QueryConditionObject';
 
 function buildQuery(conditions) {
   const parsedConditions = _.chain(conditions)

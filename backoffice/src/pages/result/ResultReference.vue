@@ -61,9 +61,9 @@ import Vue from 'vue';
 import _ from 'lodash';
 import Papa from 'papaparse';
 
-import Bus from './Bus';
+import Bus from '../../components/Bus';
 
-import pullingConfig from '../configs/pulling';
+import pullingConfig from '../../configs/pulling';
 
 export default Vue.component('result-references', {
   props: ['jobId', 'hgncId'],
