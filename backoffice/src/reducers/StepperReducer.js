@@ -1,4 +1,4 @@
-import { actions } from './MainStepperAction';
+import { actions } from './StepperAction';
 
 const { SET_PMID_COUNT } = actions;
 

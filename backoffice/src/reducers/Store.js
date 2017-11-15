@@ -5,7 +5,7 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import _ from 'lodash';
 
 import { actionCreators as emailActions } from './EmailAction';
-import { actionCreators as mainStepperActions } from './MainStepperAction';
+import { actionCreators as stepperActions } from './StepperAction';
 import { actionCreators as parameterActions } from './ParameterAction';
 import { actionCreators as periodActions } from './PeriodAction';
 import { actionCreators as queryBuilderActions } from './QueryBuilderAction';
@@ -16,7 +16,7 @@ import {
 import email from './EmailReducer';
 import parameters from './ParameterReducer';
 import period from './PeriodReducer';
-import pmidCount from './MainStepperReducer';
+import pmidCount from './StepperReducer';
 import { metricScore, nodeSize } from './SelectNodeSizeReducer';
 import { query, conditions } from './QueryBuilderReducer';
 
@@ -37,7 +37,7 @@ const actions = _.defaults(
   parameterActions,
   selectNodeSizeActions,
   emailActions,
-  mainStepperActions,
+  stepperActions,
 );
 
 const reduxStore = createStore(reducers, applyMiddleware());

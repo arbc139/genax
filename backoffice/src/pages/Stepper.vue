@@ -1,7 +1,7 @@
 <template>
   <!-- TODO(totoro): md-vertical option을 넣으면 layout이 깨지는 문제가 있음. -->
   <md-stepper
-    class="main-stepper"
+    class="stepper"
     md-alternate-labels
     @change="onStepChanged"
     @completed="onSubmitted"
@@ -128,7 +128,7 @@ const STEPPER_STATE = {
   PMID_COUNT_LOADING: 'STEPPER_STATE_PMID_COUNT_LOADING',
 };
 
-export default Vue.component('main-stepper', {
+export default Vue.component('stepper', {
   components: {
     QueryBuilder,
     Period,
@@ -168,14 +168,14 @@ export default Vue.component('main-stepper', {
       const condition = this.query.length !== 0;
       return {
         condition,
-        message: condition ? '' : this.$t('mainStepper.query.errorMessage'),
+        message: condition ? '' : this.$t('stepper.query.errorMessage'),
       };
     },
     enablePassPeriod() {
       const condition = !_.isEmpty(this.period);
       return {
         condition,
-        message: condition ? '' : this.$t('mainStepper.period.errorMessage'),
+        message: condition ? '' : this.$t('stepper.period.errorMessage'),
       };
     },
     numberizedParameters() {
@@ -196,7 +196,7 @@ export default Vue.component('main-stepper', {
       return {
         condition,
         conditions,
-        message: condition ? '' : this.$t('mainStepper.parameter.errorMessage'),
+        message: condition ? '' : this.$t('stepper.parameter.errorMessage'),
       };
     },
     enablePassSelectNodeSize() {
@@ -208,14 +208,14 @@ export default Vue.component('main-stepper', {
       return {
         condition,
         conditions,
-        message: condition ? '' : this.$t('mainStepper.selectNodeSize.errorMessage'),
+        message: condition ? '' : this.$t('stepper.selectNodeSize.errorMessage'),
       };
     },
     enablePmidCount() {
       const condition = this.pmidCount <= 5000000;
       return {
         condition,
-        message: this.$t('mainStepper.pmidCount.errorMessage'),
+        message: this.$t('stepper.pmidCount.errorMessage'),
       };
     },
     enableSubmit() {
@@ -225,7 +225,7 @@ export default Vue.component('main-stepper', {
         this.enablePmidCount.condition;
       return {
         condition,
-        message: condition ? '' : this.$t('mainStepper.submit.errorMessage'),
+        message: condition ? '' : this.$t('stepper.submit.errorMessage'),
       };
     },
   },
@@ -277,17 +277,17 @@ export default Vue.component('main-stepper', {
 </script>
 
 <style>
-.main-stepper {
+.stepper {
   overflow: hidden;
 }
 
 /* Workaround for scrolling without step navigator. */
-.main-stepper .md-steps-navigation-container {
+.stepper .md-steps-navigation-container {
   margin-bottom: 0 !important;
 }
 
 /* Workaround for scrolling without step navigator. */
-.main-stepper :not(.md-steps-navigation).md-whiteframe.md-whiteframe-1dp {
+.stepper :not(.md-steps-navigation).md-whiteframe.md-whiteframe-1dp {
   overflow: auto;
   -webkit-box-shadow: none;
   box-shadow: none;

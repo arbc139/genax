@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 import Result from '@/pages/Result';
 import Main from '@/pages/Main';
-import MainStepper from '@/pages/MainStepper';
+import Stepper from '@/pages/Stepper';
 
 import ResultTable from '@/components/ResultTable';
 import ResultReference from '@/components/ResultReference';
@@ -19,7 +19,7 @@ export default new Router({
         {
           path: '',
           name: 'Stepper',
-          component: MainStepper,
+          component: Stepper,
         },
         {
           path: 'result/:jobKey',

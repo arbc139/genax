@@ -7,7 +7,7 @@ export default {
     downloadButton: 'Download',
     linkMessage: 'click here',
   },
-  mainStepper: {
+  stepper: {
     query: {
       errorMessage: 'Query is empty',
     },
