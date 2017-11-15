@@ -17,7 +17,7 @@ Vue.use(VueResource);
 Vue.config.productionTip = false;
 
 Vue.material.registerTheme('default', {
-  primary: #00205b,
+  primary: '#00205b',
   accent: {
     color: 'pink',
     hue: '500',
