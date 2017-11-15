@@ -1,45 +1,43 @@
 <template>
   <md-whiteframe class="result-status" md-elevation="2">
     <md-layout
-      md-column
+      class="status-title-container"
+      md-row
       md-align="center"
       md-vertical-align="center"
     >
-      <md-layout
-        class="status-title-container"
-        md-row
-        md-align="center"
-        md-vertical-align="center"
-        md-flex
-      >
-        <md-layout md-row md-align="center" md-vertical-align="center" md-flex>
-          <span class="md-body-2">{{ title }}</span>
-        </md-layout>
-        <md-layout md-row md-align="center" md-vertical-align="center" md-flex
-          :style="{color: translatedStatus.color}"
-        >
-          <span class="md-body-2">{{ translatedStatus.text }}</span>
-        </md-layout>
+      <md-layout md-row md-align="center" md-vertical-align="center" md-flex>
+        <span class="md-body-2">{{ title }}</span>
       </md-layout>
-      <md-layout
-        class="status-count-input-container"
-        md-column
-        md-align="center"
-        md-vertical-align="center"
-        md-flex
-        v-show="!showSpinner"
+      <md-layout md-row md-align="center" md-vertical-align="center" md-flex
+        :style="{color: translatedStatus.color}"
       >
-        <md-input-container
-          v-for="instruction in instructions"
-          :key="instruction.id"
-        >
-          <label>{{ instruction.label }}</label>
-          <md-input v-model="instruction.count" readonly />
-        </md-input-container>
+        <span class="md-body-2">{{ translatedStatus.text }}</span>
       </md-layout>
+    </md-layout>
+    <md-layout
+      class="status-count-input-container"
+      md-column
+      md-align="start"
+      md-vertical-align="start"
+      md-flex
+      v-show="!showSpinner"
+    >
+      <md-input-container
+        v-for="instruction in instructions"
+        :key="instruction.id"
+      >
+        <label>{{ instruction.label }}</label>
+        <md-input v-model="instruction.count" readonly />
+      </md-input-container>
+    </md-layout>
+    <md-layout
+      md-align="center"
+      md-vertical-align="center"
+      v-show="showSpinner"
+    >
       <md-spinner
         md-indeterminate
-        v-show="showSpinner"
       />
     </md-layout>
   </md-whiteframe>
@@ -72,7 +70,7 @@ export default Vue.component('result-status', {
       };
     },
     showSpinner() {
-      return this.status !== ResultStatusType.done;
+      return this.status === ResultStatusType.running;
     },
   },
 });
@@ -80,11 +78,14 @@ export default Vue.component('result-status', {
 
 <style scoped>
 .result-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 16px;
 }
 
 .status-title-container {
-  width: 100%;
+  flex: 36px 0 0;
   margin-bottom: 16px;
 }
 
