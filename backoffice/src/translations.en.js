@@ -7,6 +7,17 @@ export default {
     downloadButton: 'Download',
     linkMessage: 'click here',
   },
+  mainTabs: {
+    about: {
+      label: 'About',
+    },
+    run: {
+      label: 'Run',
+    },
+    performance: {
+      label: 'Performance',
+    },
+  },
   stepper: {
     query: {
       errorMessage: 'Query is empty',
