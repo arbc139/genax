@@ -26,7 +26,7 @@
           md-align="start"
         >
           <md-toolbar class="md-dense">
-            <h2 class="md-subheading result-parameter-option-title">Co-occurence Mining Options</h2>
+            <h2 class="md-subheading result-parameter-option-title">Co-occurrence Mining Options</h2>
             <md-button
               class="md-icon-button"
               v-show="isCoOccurenceOptionsExpanded"
