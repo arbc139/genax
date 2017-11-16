@@ -140,12 +140,25 @@ except:
     except:
         pass"""
 try:
+    edgeWeight = {}
     next(edgeCooc)
     for row in edgeCooc:
         attributes=row[0].split(',')
-        weight_dict = {}
+        edgeWeight[(attributes[0],attributes[1])] = float(attributes[cooc_em])
+        """weight_dict = {}
         weight_dict['weight'] = float(attributes[cooc_em])
-        edgeCoocList.append((attributes[0],attributes[1],weight_dict))
+        edgeCoocList.append((attributes[0],attributes[1],weight_dict))"""
+    maxWeight = float(max(edgeWeight.values()))
+    minWeight = float(min(edgeWeight.values()))
+    for edge in edgeWeight:
+        if maxWeight != minWeight:
+            weight = (edgeWeight[edge] - minWeight) / (maxWeight-minWeight)
+        else:
+            weight = edgeWeight[edge]
+        weight_dict = {}
+        weight_dict['weight'] = weight
+        edgeCoocList.append((edge[0],edge[1],weight_dict))
+
     gCooc=nx.Graph()
     gCooc.add_edges_from(edgeCoocList)
 
