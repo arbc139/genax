@@ -182,7 +182,7 @@ try:
     CoocCloseness = gt.closeness(gtgCooc,weight = CoocEdgeWeight)
     
     print("7")
-    CoocKatz = gt.katz(gtgCooc, weight = CoocEdgeWeight,beta = CoocVertexWeight)
+    CoocKatz = gt.katz(gtgCooc, weight = CoocEdgeWeight)
     CoocClustering = gt.local_clustering(gtgCooc)
     print("8")
     CoocDegree = gtgCooc.degree_property_map("total", weight = CoocEdgeWeight)
