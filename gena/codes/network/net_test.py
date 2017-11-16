@@ -187,7 +187,9 @@ try:
     CoocDegree = gtgCooc.degree_property_map("total", weight = CoocEdgeWeight)
     print("9")
     print("where")
-
+    print("A")
+    print len(nodeList)
+    print("B")
 
     tempCoocList = []
     for i in CoocVertexIter:
