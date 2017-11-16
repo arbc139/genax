@@ -186,8 +186,7 @@ try:
     print("8")
     CoocDegree = gtgCooc.degree_property_map("total", weight = CoocEdgeWeight)
     print("9")
-    for i in gtgCooc.edges():
-        print(CoocEdgeWeight[i])
+
 
 
     tempCoocList = []
@@ -235,7 +234,6 @@ try:
             temp = (str(j_id), CoocNodeVertexId[i], CoocNodeDegree[i],
                     CoocNodeBetween[i],CoocNodeCloseness[i],CoocNodeEigen[i],
                     CoocNodeKatz[i],CoocNodeClustering[i],"4")
-            print(CoocNodeVertexId[i],CoocNodeVertexWeight[i])
             temp = [None if (math.isnan(float(x)) or math.isinf(float(x))) else x for x in temp]
             CoocNodeQueryInput.append(
                     temp
