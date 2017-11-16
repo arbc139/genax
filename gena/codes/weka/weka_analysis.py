@@ -37,9 +37,7 @@ command += job_option
 command += mysql_option
 command += std_out
 status = subprocess.call(command,shell=True)
-if status != 0:
-	query = "UPDATE JOB SET NETWORK = -3 WHERE J_ID = (%s)"
-	curs.execute(query,j_id)
+
 python_call ="nohup python "
 #main_dir = " /home/"+mysqlId+"/Capstone-2017-2/gena/codes/weka/cooc.py "
 main_dir = " /home/"+mysqlId+"/Capstone-2017-2/gena/codes/weka/test_cooc.py "
