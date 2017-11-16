@@ -202,7 +202,7 @@ if __name__ == '__main__':
             try:
 				cooc.write(elm[0]+","+elm[1]+","+str(pVal[elm])+","+str(support[elm])+","+str(LogPVal[elm])+","+str(oddRatio[elm])+","+str(risk[elm])+","+str(lift[elm])+","+str(chi2[elm])+","+str(phi[elm])+","+str(contingency[elm])+"\n")
             except:
-				maximum = max(LogPVal, key=LogPVal.get())
+				maximum = max(LogPVal.iteritems(), key=operator.itemgetter(1))[0]
 				cooc.write(elm[0]+","+elm[1]+","+str(pVal[elm])+","+str(support[elm])+","+str(LogPVal[maximum])+","+str(oddRatio[elm])+","+str(risk[elm])+","+str(lift[elm])+","+str(chi2[elm])+","+str(phi[elm])+","+str(contingency[elm])+"\n")
     node_out.write("HgncId,Support\n")
     node_count = sum(node.values())
