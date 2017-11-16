@@ -175,7 +175,7 @@ try:
     print("4")
     CoocBetween, ep = gt.betweenness(gtgCooc,weight=CoocEdgeWeight,norm=True)
     print("5")
-    ee, CoocEigen = gt.eigenvector(gtgCooc, weight=CoocEdgeWeight)
+    #ee, CoocEigen = gt.eigenvector(gtgCooc, weight=CoocEdgeWeight)
     print("6")
     #ee, CoocAuthority, CoocHub = gt.hits(gtgCooc, weight =CoocEdgeWeight)
     #CoocPagerank = gt.pagerank(gtgCooc, weight =CoocEdgeWeight)
@@ -223,7 +223,11 @@ try:
         #ee, CoocNodeAuthority, CoocNodeHub = gt.hits(gtgCoocNode, weight =CoocNodeEdgeWeight)
         #CoocNodePagerank = gt.pagerank(gtgCoocNode, weight =CoocNodeEdgeWeight)
         CoocNodeCloseness = gt.closeness(gtgCoocNode,weight = CoocNodeEdgeWeight)
+        print("10")
+
         CoocNodeKatz = gt.katz(gtgCoocNode, weight = CoocNodeEdgeWeight,beta=CoocNodeVertexWeight)
+        print("11")
+
         CoocNodeClustering = gt.local_clustering(gtgCoocNode)
         CoocNodeDegree = gtgCoocNode.degree_property_map("total", weight = CoocNodeEdgeWeight)
 
