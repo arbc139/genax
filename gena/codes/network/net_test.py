@@ -142,6 +142,7 @@ except:
 try:
     edgeWeight = {}
     next(edgeCooc)
+    print("1")
     for row in edgeCooc:
         attributes=row[0].split(',')
         edgeWeight[(attributes[0],attributes[1])] = float(attributes[cooc_em])
@@ -150,6 +151,7 @@ try:
         edgeCoocList.append((attributes[0],attributes[1],weight_dict))"""
     maxWeight = float(max(edgeWeight.values()))
     minWeight = float(min(edgeWeight.values()))
+    print("2")
     for edge in edgeWeight:
         if maxWeight != minWeight:
             weight = (edgeWeight[edge] - minWeight) / (maxWeight-minWeight)
@@ -158,7 +160,7 @@ try:
         weight_dict = {}
         weight_dict['weight'] = weight
         edgeCoocList.append((edge[0],edge[1],weight_dict))
-
+    print("3")
     gCooc=nx.Graph()
     gCooc.add_edges_from(edgeCoocList)
 
@@ -170,16 +172,20 @@ try:
     CoocEdgeWeight = gtgCooc.edge_properties['weight']
     CoocVertexId = gtgCooc.vertex_properties['id']
     CoocVertexIter = gtgCooc.vertices()
-
+    print("4")
     CoocBetween, ep = gt.betweenness(gtgCooc,weight=CoocEdgeWeight,norm=True)
+    print("5")
     ee, CoocEigen = gt.eigenvector(gtgCooc, weight=CoocEdgeWeight)
+    print("6")
     #ee, CoocAuthority, CoocHub = gt.hits(gtgCooc, weight =CoocEdgeWeight)
     #CoocPagerank = gt.pagerank(gtgCooc, weight =CoocEdgeWeight)
     CoocCloseness = gt.closeness(gtgCooc,weight = CoocEdgeWeight)
+    print("7")
     #CoocKatz = gt.katz(gtgCooc, weight = CoocEdgeWeight,beta = CoocVertexWeight)
     CoocClustering = gt.local_clustering(gtgCooc)
+    print("8")
     CoocDegree = gtgCooc.degree_property_map("total", weight = CoocEdgeWeight)
-
+    print("9")
     for i in gtgCooc.edges():
         print(CoocEdgeWeight[i])
 
