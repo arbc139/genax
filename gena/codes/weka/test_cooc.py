@@ -127,7 +127,7 @@ def worker((i,totalEdgeHit,min_sup,j_id,mysqlId)):
 		except:
 			pass
 		reversePVal[sourceEdge] = 1/(pVal[sourceEdge]+1)
-		risk[sourceEdge] = (a/(a+b)) / (c/(c+d))
+		#risk[sourceEdge] = (a/(a+b)) / (c/(c+d))
 		obs = np.array([[a,b],[c,d]])
 		chi2[sourceEdge], pChi[sourceEdge], dof, ex = scipy.stats.chi2_contingency(obs, correction=False)
 		phi[sourceEdge] = math.sqrt(chi2[sourceEdge]/(a+b+c+d))
@@ -172,7 +172,7 @@ if __name__ == '__main__':
     node_out = open(filename_2,'w')
     cooc_counter = 0
     node_counter = 0
-    cooc.write("HgncId,HgncId,P-Value,Support,Absolute Log P-Value,Odd Ratio,Relative Risk,Lift,Chi-squared Statistic,Phi Coefficient,Contingency Coefficient\n")
+    cooc.write("HgncId,HgncId,P-Value,Support,Absolute Log P-Value,Odd Ratio,Lift,Chi-squared Statistic,Phi Coefficient,Contingency Coefficient\n")
 
     query = "CREATE TABLE RELATION_"+j_id+" (SOURCE INT, TARGET INT, HIT INT) ENGINE = MEMORY;"
     curs.execute(query)
@@ -200,10 +200,10 @@ if __name__ == '__main__':
                 continue
             cooc_counter = cooc_counter+1
             try:
-				cooc.write(elm[0]+","+elm[1]+","+str(pVal[elm])+","+str(support[elm])+","+str(LogPVal[elm])+","+str(oddRatio[elm])+","+str(risk[elm])+","+str(lift[elm])+","+str(chi2[elm])+","+str(phi[elm])+","+str(contingency[elm])+"\n")
+				cooc.write(elm[0]+","+elm[1]+","+str(pVal[elm])+","+str(support[elm])+","+str(LogPVal[elm])+","+str(oddRatio[elm])+","+str(lift[elm])+","+str(chi2[elm])+","+str(phi[elm])+","+str(contingency[elm])+"\n")
             except:
 				maximum = max(LogPVal.iteritems(), key=operator.itemgetter(1))[0]
-				cooc.write(elm[0]+","+elm[1]+","+str(pVal[elm])+","+str(support[elm])+","+str(LogPVal[maximum])+","+str(oddRatio[elm])+","+str(risk[elm])+","+str(lift[elm])+","+str(chi2[elm])+","+str(phi[elm])+","+str(contingency[elm])+"\n")
+				cooc.write(elm[0]+","+elm[1]+","+str(pVal[elm])+","+str(support[elm])+","+str(LogPVal[maximum])+","+str(oddRatio[elm])+","+str(lift[elm])+","+str(chi2[elm])+","+str(phi[elm])+","+str(contingency[elm])+"\n")
     node_out.write("HgncId,Support\n")
     node_count = sum(node.values())
     for nod in nodeIter:
