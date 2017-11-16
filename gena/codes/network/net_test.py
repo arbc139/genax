@@ -205,7 +205,9 @@ try:
         CoocQueryInput.append(
             temp
             )
+    print("A")
     print len(nodeList)
+    print("B")
     if len(nodeList) ==  0:
         CoocNodeQueryInput = tempCoocList
     else:
