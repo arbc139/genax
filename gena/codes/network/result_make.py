@@ -34,9 +34,9 @@ for netId in range(1,5):
     count = 0
     f = open(path,'w')
     wr = csv.writer(f)
-    wr.writerow(['Symbol','HgncId','Degree','Betweenness','Closeness','Clustering coefficient','Eigenvector','Katz'])
+    wr.writerow(['Symbol','HgncId','Degree','Betweenness','Closeness','Katz'])
     for row in rows:
-        wr.writerow([row['SYMBOL'],row['HGNC_ID'],row['Degree'],row['Betweenness'],row['Closeness'],row['ClusteringCoef'],row['Eigenvector'],row['Katz']])
+        wr.writerow([row['SYMBOL'],row['HGNC_ID'],row['Degree'],row['Betweenness'],row['Closeness'],row['Katz']])
         count = count + 1
     f.close()
     
