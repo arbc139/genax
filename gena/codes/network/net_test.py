@@ -186,7 +186,7 @@ try:
     print("8")
     CoocDegree = gtgCooc.degree_property_map("total", weight = CoocEdgeWeight)
     print("9")
-
+    print("where")
 
 
     tempCoocList = []
