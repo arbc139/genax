@@ -207,7 +207,7 @@ try:
         CoocNodeVertexWeight = gtgCoocNode.vertex_properties['weight']
 
         CoocNodeBetween, ep = gt.betweenness(gtgCoocNode,weight=CoocNodeEdgeWeight,norm=True)
-        ee, CoocNodeEigen = gt.eigenvector(gtgCoocNode, weight=CoocNodeEdgeWeight)
+        #ee, CoocNodeEigen = gt.eigenvector(gtgCoocNode, weight=CoocNodeEdgeWeight)
         #ee, CoocNodeAuthority, CoocNodeHub = gt.hits(gtgCoocNode, weight =CoocNodeEdgeWeight)
         #CoocNodePagerank = gt.pagerank(gtgCoocNode, weight =CoocNodeEdgeWeight)
         CoocNodeCloseness = gt.closeness(gtgCoocNode,weight = CoocNodeEdgeWeight)
