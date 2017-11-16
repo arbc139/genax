@@ -191,22 +191,7 @@ try:
     print len(nodeList)
     print("B")
 
-    tempCoocList = []
-    for i in CoocVertexIter:
-        temp = (str(j_id), CoocVertexId[i], CoocDegree[i],
-            CoocBetween[i],CoocCloseness[i],CoocEigen[i],
-            CoocEigen[i],CoocClustering[i],"3")
-        tempCoocNode = (str(j_id), CoocVertexId[i], CoocDegree[i],
-            CoocBetween[i],CoocCloseness[i],CoocEigen[i],
-            CoocEigen[i],CoocClustering[i],"4")
-        temp = [None if (math.isnan(float(x)) or math.isinf(float(x))) else x for x in temp]
-        tempCoocNode = [None if (math.isnan(float(x)) or math.isinf(float(x))) else x for x in tempCoocNode]
-        tempCoocList.append(
-            tempCoocNode
-        )
-        CoocQueryInput.append(
-            temp
-            )
+    
     print("A")
     print len(nodeList)
     print("B")
@@ -242,7 +227,22 @@ try:
             CoocNodeQueryInput.append(
                     temp
                     )
-
+    tempCoocList = []
+    for i in CoocVertexIter:
+        temp = (str(j_id), CoocVertexId[i], CoocDegree[i],
+            CoocBetween[i],CoocCloseness[i],CoocEigen[i],
+            CoocEigen[i],CoocClustering[i],"3")
+        tempCoocNode = (str(j_id), CoocVertexId[i], CoocDegree[i],
+            CoocBetween[i],CoocCloseness[i],CoocEigen[i],
+            CoocEigen[i],CoocClustering[i],"4")
+        temp = [None if (math.isnan(float(x)) or math.isinf(float(x))) else x for x in temp]
+        tempCoocNode = [None if (math.isnan(float(x)) or math.isinf(float(x))) else x for x in tempCoocNode]
+        tempCoocList.append(
+            tempCoocNode
+        )
+        CoocQueryInput.append(
+            temp
+            )
 
 except:
     try:
