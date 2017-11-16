@@ -180,9 +180,9 @@ try:
     #ee, CoocAuthority, CoocHub = gt.hits(gtgCooc, weight =CoocEdgeWeight)
     #CoocPagerank = gt.pagerank(gtgCooc, weight =CoocEdgeWeight)
     CoocCloseness = gt.closeness(gtgCooc,weight = CoocEdgeWeight)
-    CoocNodeKatz = gt.katz(gtgCoocNode, weight = CoocNodeEdgeWeight,beta=CoocNodeVertexWeight)
+    
     print("7")
-    #CoocKatz = gt.katz(gtgCooc, weight = CoocEdgeWeight,beta = CoocVertexWeight)
+    CoocKatz = gt.katz(gtgCooc, weight = CoocEdgeWeight,beta = CoocVertexWeight)
     CoocClustering = gt.local_clustering(gtgCooc)
     print("8")
     CoocDegree = gtgCooc.degree_property_map("total", weight = CoocEdgeWeight)
@@ -195,8 +195,8 @@ try:
     tempCoocList = []
     for i in CoocVertexIter:
         temp = (str(j_id), CoocVertexId[i], CoocDegree[i],
-            CoocBetween[i],CoocCloseness[i],CoocNodeKatz[i],
-            CoocNodeKatz[i],CoocClustering[i],"3")
+            CoocBetween[i],CoocCloseness[i],CoocKatz[i],
+            CoocKatz[i],CoocClustering[i],"3")
 
         temp = [None if (math.isnan(float(x)) or math.isinf(float(x))) else x for x in temp]
         CoocQueryInput.append(
