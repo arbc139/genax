@@ -4,6 +4,7 @@ import scipy
 import scipy.stats
 import numpy as np
 import math
+import operator
 from multiprocessing import Manager, Pool, Process,Value
 def workerPreset(j_id,mysqlId):
 	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
