@@ -212,7 +212,7 @@ export default Vue.component('stepper', {
       };
     },
     enablePmidCount() {
-      const condition = this.pmidCount <= 5000000;
+      const condition = this.pmidCount <= 30000000;
       return {
         condition,
         message: this.$t('stepper.pmidCount.errorMessage'),
