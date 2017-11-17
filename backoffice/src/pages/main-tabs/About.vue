@@ -1,5 +1,5 @@
 <template>
- <md-whiteframe md-elevation="2">
+ <md-whiteframe md-elevation="2" class="bcbTemp">
   <div>
     <h1>Welcome to GENAX</h1>
     <h4>GENAX uses the keywords you enter to dynamically find genes associated with your keywords.</h4>
@@ -16,4 +16,8 @@ export default {
 </script>
 
 <style scoped>
+.bcbTemp{
+  margin: 15px,
+  padding: 15px
+  }
 </style>
