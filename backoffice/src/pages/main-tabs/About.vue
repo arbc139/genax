@@ -16,8 +16,8 @@ export default {
 </script>
 
 <style scoped>
-.bcbTemp{
-  margin: 15px,
-  padding: 15px
-  }
+.bcbTemp {
+  margin: 15px;
+  padding: 15px;
+}
 </style>
