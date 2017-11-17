@@ -32,7 +32,7 @@ if __name__ == '__main__':
 	#if row['COUNT(*)'] > 3:#Num of job that can be done in one cycle is 4
 
 
-	if row['COUNT(*)'] > 0:  #Num of job that can be done in one cycle is 1
+	if row['COUNT(*)'] > 3:  #Num of job that can be done in one cycle is 4
 		exit()
 
 
