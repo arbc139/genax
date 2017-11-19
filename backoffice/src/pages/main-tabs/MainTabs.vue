@@ -17,7 +17,7 @@
         :md-label="$t('mainTabs.performance.label')"
       />
     </md-tabs>
-    <router-view />
+    <router-view class="router-view" />
   </div>
 </template>
 
@@ -92,9 +92,14 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
 }
+
 .main-tabs {
   display: unset;
+}
+
+.router-view {
 }
 </style>
 
