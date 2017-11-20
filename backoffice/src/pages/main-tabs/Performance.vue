@@ -1,21 +1,24 @@
 <template>
   <div class="root">
-    <div class="left-frame">
-      <md-whiteframe md-elevation="2" class="bcbTemp">
-        <h1>Performance Test</h1>
+    <md-whiteframe md-whiteframe md-elevation="2" class="bcbTemp">
+      <h1>Performance Test</h1>
         <p1>The performance of GENAX depends on the number of papers and the support cut off value.</p1>
         <p1>The performance of GENAX is linearly proportional to the number of papers. Performance is also linearly proportional to the absolute value of log(support cut).</p1>
-        <scatter-chart
-          :data="numberOfPaper.data"
-          :option="numberOfPaper.option"
-        />
-      </md-whiteframe>
-      <md-whiteframe md-elevation="2">
-        <scatter-chart
-          :data="absoluteLog.data"
-          :option="absoluteLog.option"
-        />
-      </md-whiteframe>
+      <div class="left-frame">
+        <md-whiteframe md-elevation="2">
+          
+          <scatter-chart
+            :data="numberOfPaper.data"
+            :option="numberOfPaper.option"
+          />
+        </md-whiteframe>
+        <md-whiteframe md-elevation="2">
+          <scatter-chart
+            :data="absoluteLog.data"
+            :option="absoluteLog.option"
+          />
+        </md-whiteframe>
+    </md-whiteframe>
     </div>
   </div>
 </template>
