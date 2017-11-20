@@ -1,6 +1,5 @@
 <template>
   <div class="root">
-    <md-whiteframe md-elevation="2" class="bcbTemp">
       <div class="left-frame">
         <md-whiteframe md-elevation="2">
           <scatter-chart
@@ -15,7 +14,6 @@
           />
         </md-whiteframe>
     </div>
-    </md-whiteframe>
   </div>
 </template>
 
