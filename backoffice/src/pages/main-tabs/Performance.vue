@@ -1,8 +1,10 @@
 <template>
   <div class="root">
     <div class="left-frame">
-      <h1>Performance Test</h1>
       <md-whiteframe md-elevation="2" class="bcbTemp">
+        <h1>Performance Test</h1>
+        <p1>The performance of GENAX depends on the number of papers and the support cut off value.</p1>
+        <p1>The performance of GENAX is linearly proportional to the number of papers. Performance is also linearly proportional to the absolute value of log(support cut).</p1>
         <scatter-chart
           :data="numberOfPaper.data"
           :option="numberOfPaper.option"
