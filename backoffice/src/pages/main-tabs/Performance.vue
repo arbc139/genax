@@ -1,18 +1,17 @@
 <template>
   <div class="root">
     <md-whiteframe md-elevation="2" class="bcbTemp">
-      <h1>Performance Test</h1>
-      <p1>The performance of GENAX depends on the number of papers and the support cut off value.</p1>
-      <p1>The performance of GENAX is linearly proportional to the number of papers. Performance is also linearly proportional to the absolute value of log(support cut).</p1>
-      <p1>In order to investigate the effect of the number of papers on the performance of GENAX, we measured the time of the work by changing the time period of the paper about the same query and support cut.</p1>
-      <p1>The search term is "Cancer" and the time period is 1 year, 2 years, ..., 10 years ago, from November 17, 2017. Support cut and other options are the default set provided by GENAX.</p1>
-      <p1>As the number of target papers increased, the working time increased linearly in proportion to this. The equation for the linear watershed of this data is</p1>
-      <p1>y = 0.000537x - 59.0 and R² is 0.991</p>
+      <div>
+        <h1>Performance Test</h1>
+        <p1>The performance of GENAX depends on the number of papers and the support cut off value.</p1>
+        <p1>The performance of GENAX is linearly proportional to the number of papers. Performance is also linearly proportional to the absolute value of log(support cut).</p1>
+        <p1>In order to investigate the effect of the number of papers on the performance of GENAX, we measured the time of the work by changing the time period of the paper about the same query and support cut.</p1>
+        <p1>The search term is "Cancer" and the time period is 1 year, 2 years, ..., 10 years ago, from November 17, 2017. Support cut and other options are the default set provided by GENAX.</p1>
+        <p1>As the number of target papers increased, the working time increased linearly in proportion to this. The equation for the linear trend line of this data is</p1>
+        <p1>y = 0.000537x - 59.0 and R² is 0.991</p>
+      </div>
       <div class="left-frame">
         <md-whiteframe md-elevation="2">
-          
-            
-
           <scatter-chart
             :data="numberOfPaper.data"
             :option="numberOfPaper.option"
