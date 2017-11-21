@@ -8,7 +8,7 @@
         <span class="md-body-1">Below is the overall processing step of GENAX.</span>
       </div>
       <md-whiteframe class="chart-container" md-elevation="2">
-        <img src="/static/GENAX_Step.png" style="height: 70vh;">
+        <img src="/static/GENAX_Step.png" style="height: 100%; width: 100%; background-size: contain;">
       </md-whiteframe>
     </md-whiteframe>
 </div>
