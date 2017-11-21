@@ -58,12 +58,12 @@
       <md-whiteframe class="chart-container" md-elevation="2">
         <div class="chart-instruction">
           <span class="md-title chart-title">Changing Support Cut</span>
-          <span class="md-body-1">Support cut affects running time of GENAX. The higher value the support cut is, the longer it takes to get result. We measured the time of the work by changing the support cut of the options. The search term is "Cancer" and the time period is from January 1st, 1900 to November 17, 2017. Other options are same to default GENAX</span>
+          <span class="md-body-1">Support cut affects running time of GENAX. The lower the support cut is, the longer it takes to get result. We measured the time of the work by changing the support cut of the options. The search term is "Cancer" and the time period is from January 1st, 1900 to November 17, 2017. Other options are same to default GENAX</span>
           <br>
-          <span class="md-body-1">We found that the running time of GENAX is linearly proprtional to |log<sub>10</sub>(minimum_support_cut).|</span>
+          <span class="md-body-1">The running time of GENAX is linearly proprtional to |log<sub>10</sub>(minimum_support_cut)|</span>
           <span class="md-body-1">The equation for the linear trend line of this data is as below</span>
           <br>
-          <span class="md-body-1">y = 16.2 X + 1160 (R² = 0.948)(</span>
+          <span class="md-body-1">y = 16.2 X + 1160 (R² = 0.948)</span>
         </div>
         <scatter-chart
           class="chart"

@@ -35,7 +35,7 @@ export const options = {
   title: {
     display: true,
     position: 'top',
-    text: 'Running Time by Absolute Log10(support)',
+    text: 'Running Time by Absolute Log10(minimum_support_cut)',
     fontSize: 20,
   },
   legend: {
@@ -47,7 +47,7 @@ export const options = {
       position: 'bottom',
       scaleLabel: {
         display: true,
-        labelString: '|log10(support)|',
+        labelString: '|log10(minimum_support_cut)|',
       },
     }],
     yAxes: [{
