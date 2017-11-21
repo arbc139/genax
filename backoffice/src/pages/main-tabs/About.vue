@@ -9,7 +9,7 @@
         <span class="md-body-1">Below is the overall processing step of GENAX.</span>
       </div>
       <md-whiteframe class="chart-container" md-elevation="2">
-        <img src="/static/GENAX_Step.png" style="height: 100%; width: 100%; background-size: contain;">
+        <img src="/static/GENAX_Step.png" style="height: 80%; width: 80%; background-size: contain;">
       </md-whiteframe>
       <h4>Input</h4>
         <span class="md-body-1">GENAX makes query from user given keywords and time period. From the query, GENAX collects papers from PubMed.</span>
