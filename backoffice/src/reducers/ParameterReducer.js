@@ -5,7 +5,7 @@ const { SET_PARAMETER } = actions;
 function parameters(
   state = {
     MIN_SUP: 0.0001,
-    MAX_PVAL: 0.01,
+    MAX_PVAL: 0.05,
     COOC_EM: 0,
   },
   action,
