@@ -13,8 +13,7 @@
           <span class="md-body-1">As the number of target papers increased, the working time increased linearly in proportion to this. The equation for the linear trend line of this data is as below</span>
           <span class="md-body-1">y = 0.000537x - 59.0 and R² is 0.991.</span>
           <span class="md-body-1">F</span>
-        </div>
-        <div>
+          <div>
           <md-table>
             <md-table-row>
               <md-table-head>Query</md-table-head>
@@ -44,6 +43,8 @@
               <md-table-cell>45 s</md-table-cell>
             </md-table-row>
           </md-table>
+        </div>
+        
         </div>
         <scatter-chart
           class="chart"
