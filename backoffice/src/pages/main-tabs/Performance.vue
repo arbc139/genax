@@ -3,12 +3,16 @@
     <md-whiteframe class="root-paper" md-elevation="2">
       <div class="title-container">
         <h1>Performance Test</h1>
-        <span class="md-body-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+        <span class="md-body-1">The performance of GENAX depends on the number of papers and the support cut off value.</span>
+        <span class="md-body-1">The performance of GENAX is linearly proportional to the number of papers. Performance is also linearly proportional to the absolute value of log(support cut).</span>
       </div>
       <md-whiteframe class="chart-container" md-elevation="2">
         <div class="chart-instruction">
-          <span class="md-title chart-title">Number of Paper</span>
-          <span class="md-body-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+          <span class="md-title chart-title">Number of the Papers</span>
+          <span class="md-body-1">In order to investigate the effect of the number of papers on the performance of GENAX, we measured the time of the work by changing the time period of the paper about the same query and support cut.</span>
+          <span class="md-body-1">The search term is "Cancer" and the time period is 1 year, 2 years, ..., 10 years ago, from November 17, 2017. Support cut and other options are the default set provided by GENAX.</span>
+          <span class="md-body-1">As the number of target papers increased, the working time increased linearly in proportion to this. The equation for the linear trend line of this data is as below</span>
+          <span class="md-body-1">y = 0.000537x - 59.0 and R² is 0.991</span>
         </div>
         <scatter-chart
           class="chart"
