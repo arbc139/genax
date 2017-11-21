@@ -12,7 +12,8 @@
           <span class="md-body-1">In order to investigate the effect of the number of papers on the performance of GENAX, we measured the time of the work by changing the time period of the paper about the same query and support cut. The search term is "Cancer" and the time period is 1 year, 2 years, ..., 10 years ago, from November 17, 2017. Support cut and other options are the default set provided by GENAX.</span>
           <span class="md-body-1">As the number of target papers increased, the working time increased linearly in proportion to this. The equation for the linear trend line of this data is as below</span>
           <span class="md-body-1">y = 0.000537x - 59.0 and R² is 0.991.</span>
-          <span class="md-body-1">Sample data set test results with default options are like below table.</span>
+          <br></br>
+          <span class="md-body-1">Performance of sample query with default options are like below table.</span>
           <div>
           <md-table>
             <md-table-row>
@@ -26,7 +27,7 @@
               <md-table-cell>All PubMed Publication</md-table-cell>
               <md-table-cell>1900/01/01 ~ 2017/11/17</md-table-cell>
               <md-table-cell>27767389</md-table-cell>
-              <md-table-cell>6999(&lt;2h)</md-table-cell>
+              <md-table-cell>6999 (&lt;2h)</md-table-cell>
             </md-table-row>
 
             <md-table-row>
