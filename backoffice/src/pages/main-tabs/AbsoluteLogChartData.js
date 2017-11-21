@@ -5,10 +5,10 @@ const rawData = [
   { x: 4, y: 1230 },
   { x: 5, y: 1238 },
 ];
-
+/* exact equation is y = 16.2 x + 1,162.4 */
 const linearGraphData = [
-  { x: 1, y: 1178 },
-  { x: 5, y: 1243 },
+  { x: 1, y: 1178.6 },
+  { x: 5, y: 1243.4 },
 ];
 
 export const data = {
