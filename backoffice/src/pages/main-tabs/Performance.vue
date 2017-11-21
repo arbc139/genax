@@ -11,7 +11,7 @@
           <span class="md-title chart-title">Changing Number of the Papers</span>
           <span class="md-body-1">In order to evaluate the effect of the number of papers on the performance of GENAX, we measured the time of the work by changing the time period of the paper about the same query and support cut. The search term is "Cancer" and the time period is 1 year, 2 years, ..., 18 years ago, from November 17, 2017. Support cut and other options are the default set provided by GENAX.</span>
           <br>
-          <span class="md-body-1">As the number of target papers increased, the running time increased linearly in proportion to this. The equation for the linear trend line of this data is as below</span>
+          <span class="md-body-1">As the number of target papers increased, the running time increased linearly in proportion to this. The equation for the linear trend line of this data is as below.</span>
           <br>
           <span class="md-body-1">y = 0.000537x - 59.0 (R² = 0.991)</span>
           <br>
@@ -58,10 +58,10 @@
       <md-whiteframe class="chart-container" md-elevation="2">
         <div class="chart-instruction">
           <span class="md-title chart-title">Changing Support Cut</span>
-          <span class="md-body-1">Support cut affects running time of GENAX. The lower the support cut is, the longer it takes to get result. We measured the time of the work by changing the support cut of the options. The search term is "Cancer" and the time period is from January 1st, 1900 to November 17, 2017. Other options are same to default GENAX</span>
+          <span class="md-body-1">Support cut affects running time of GENAX. The lower the support cut is, the longer it takes to get result. We measured the time of the work by changing the support cut of the options. The search term is "Cancer" and the time period is from January 1st, 1900 to November 17, 2017. Other options are same to default GENAX options.</span>
           <br>
           <span class="md-body-1">The running time of GENAX is linearly proprtional to |log<sub>10</sub>(minimum_support_cut)|</span>
-          <span class="md-body-1">The equation for the linear trend line of this data is as below</span>
+          <span class="md-body-1">The equation for the linear trend line of this data is as below.</span>
           <br>
           <span class="md-body-1">y = 16.2 X + 1160 (R² = 0.948)</span>
         </div>
