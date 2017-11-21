@@ -27,21 +27,21 @@
             <md-table-row>
               <md-table-cell>All PubMed Publication</md-table-cell>
               <md-table-cell>1900/01/01 ~ 2017/11/17</md-table-cell>
-              <md-table-cell>27767389</md-table-cell>
-              <md-table-cell>6999 (&lt;2h)</md-table-cell>
+              <md-table-cell>27,767,389</md-table-cell>
+              <md-table-cell>6,999 (&lt;2h)</md-table-cell>
             </md-table-row>
 
             <md-table-row>
               <md-table-cell>"Prostate Cancer"</md-table-cell>
               <md-table-cell>1900/01/01 ~ 2017/11/17</md-table-cell>
-              <md-table-cell>149844</md-table-cell>
+              <md-table-cell>149,844</md-table-cell>
               <md-table-cell>31</md-table-cell>
             </md-table-row>
 
             <md-table-row>
               <md-table-cell>"Alzheimer's disease"</md-table-cell>
               <md-table-cell>1900/01/01 ~ 2017/11/17</md-table-cell>
-              <md-table-cell>130017</md-table-cell>
+              <md-table-cell>130,017</md-table-cell>
               <md-table-cell>45</md-table-cell>
             </md-table-row>
           </md-table>
