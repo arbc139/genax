@@ -18,7 +18,7 @@
         <h4>Network Building</h4>
         <span class="md-body-1">From the paper-gene relationship, GENAX makes edges of the gene network. Genes that are simultaneously referenced in the same paper are the co-occurring genes. And Genes that appear alone in the papers are single-occurring genes. GENAX makes contingency tables for all co-occurring gene pair and calculate statistical significance of each co-occurring gene pair. All the gene pairs become edges of the gene network and statistical significance of the gene pair is the weight of the edge. GENAX makes another network by adding single occurring nodes to the co-occurring gene network.</span>
         <h4>Network Analyzing</h4>
-        <span class="md-body-1">With the two networks, GENAX calculates centrality of each gene node. User can get the gene scores from centrality calculation. Also User can access the references where the genes are collected.</span>
+        <span class="md-body-1">After network building ends, there are two networks. One is co-occurring genes only network, and the other is co-occurring genes plus single-occurring genes network. With those two networks, GENAX calculates centrality of each gene node. User can get the gene scores from centrality calculation. Also User can access the references where the genes are collected.</span>
     </md-whiteframe>
 </div>
 
