@@ -10,26 +10,22 @@
           <span class="md-title chart-title">Number of Paper</span>
           <span class="md-body-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
         </div>
-        <md-whiteframe class="chart-wrapper" md-elevation="2">
-          <scatter-chart
-            class="chart"
-            :data="numberOfPaper.data"
-            :options="numberOfPaper.options"
-          />
-        </md-whiteframe>
+        <scatter-chart
+          class="chart"
+          :data="numberOfPaper.data"
+          :options="numberOfPaper.options"
+        />
       </md-whiteframe>
       <md-whiteframe class="chart-container" md-elevation="2">
         <div class="chart-instruction">
           <span class="md-title chart-title">Support Cut</span>
           <span class="md-body-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
         </div>
-        <md-whiteframe class="chart-wrapper" md-elevation="2">
-          <scatter-chart
-            class="chart"
-            :data="absoluteLog.data"
-            :options="absoluteLog.options"
-          />
-        </md-whiteframe>
+        <scatter-chart
+          class="chart"
+          :data="absoluteLog.data"
+          :options="absoluteLog.options"
+        />
       </md-whiteframe>
     </md-whiteframe>
   </div>
@@ -86,18 +82,14 @@ export default {
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin-right: 16px;
 }
 
 .chart-title {
   margin-bottom: 8px;
 }
 
-.chart-wrapper {
-  flex: 1;
-}
-
 .chart {
-  margin: 16px;
+  margin-left: 16px;
+  flex: 1;
 }
 </style>
