@@ -1,3 +1,5 @@
+import palette from 'vue-material/src/core/components/mdTheme/palette';
+
 const rawData = [
   { x: 129295, y: 41 },
   { x: 292880, y: 64 },
@@ -30,30 +32,52 @@ const linearGraphData = [
 export const data = {
   datasets: [
     {
-      label: 'measurement data',
-      showLine: false,
-      fill: false,
       data: rawData,
+      borderColor: palette.pink[200],
+      pointBackgroundColor: palette.pink[200],
     },
     {
-      label: 'linear',
       showLine: true,
       fill: false,
+      pointRadius: 0,
       data: linearGraphData,
+      borderColor: palette.pink[200],
     },
   ],
 };
 
-export const option = {
+export const options = {
+  maintainAspectRatio: false,
+  title: {
+    display: true,
+    position: 'top',
+    text: 'Running Time by the Number of Paper',
+    fontSize: 20,
+  },
+  legend: {
+    display: false,
+  },
   scales: {
     xAxes: [{
       type: 'linear',
       position: 'bottom',
+      scaleLabel: {
+        display: true,
+        labelString: 'Number of paper',
+      },
+    }],
+    yAxes: [{
+      type: 'linear',
+      position: 'left',
+      scaleLabel: {
+        display: true,
+        labelString: 'Time (s)',
+      },
     }],
   },
 };
 
 export default {
   data,
-  option,
+  options,
 };

@@ -1,3 +1,5 @@
+import palette from 'vue-material/src/core/components/mdTheme/palette';
+
 const rawData = [
   { x: 1, y: 1177 },
   { x: 2, y: 1190 },
@@ -14,28 +16,52 @@ const linearGraphData = [
 export const data = {
   datasets: [
     {
-      label: 'measurement data',
       data: rawData,
+      borderColor: palette.pink[200],
+      pointBackgroundColor: palette.pink[200],
     },
     {
-      label: 'linear',
       showLine: true,
       fill: false,
+      pointRadius: 0,
       data: linearGraphData,
+      borderColor: palette.pink[200],
     },
   ],
 };
 
-export const option = {
+export const options = {
+  maintainAspectRatio: false,
+  title: {
+    display: true,
+    position: 'top',
+    text: 'Running Time by Absolute Log10(support)',
+    fontSize: 20,
+  },
+  legend: {
+    display: false,
+  },
   scales: {
     xAxes: [{
       type: 'linear',
       position: 'bottom',
+      scaleLabel: {
+        display: true,
+        labelString: 'Absolute Log10(support)',
+      },
+    }],
+    yAxes: [{
+      type: 'linear',
+      position: 'left',
+      scaleLabel: {
+        display: true,
+        labelString: 'Time (s)',
+      },
     }],
   },
 };
 
 export default {
   data,
-  option,
+  options,
 };

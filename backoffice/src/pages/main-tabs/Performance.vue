@@ -4,13 +4,13 @@
         <md-whiteframe md-elevation="2">
           <scatter-chart
             :data="numberOfPaper.data"
-            :option="numberOfPaper.option"
+            :options="numberOfPaper.options"
           />
         </md-whiteframe>
         <md-whiteframe md-elevation="2">
           <scatter-chart
             :data="absoluteLog.data"
-            :option="absoluteLog.option"
+            :options="absoluteLog.options"
           />
         </md-whiteframe>
     </div>
