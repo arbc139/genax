@@ -47,7 +47,7 @@ export const options = {
       position: 'bottom',
       scaleLabel: {
         display: true,
-        labelString: '&#124;log<sub>10</sub>(support)&#124;',
+        labelString: '|log10(support)|',
       },
     }],
     yAxes: [{
