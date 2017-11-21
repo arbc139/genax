@@ -19,28 +19,28 @@
               <md-table-head>Query</md-table-head>
               <md-table-head>Time Period</md-table-head>
               <md-table-head>Number of Papers</md-table-head>
-              <md-table-head>Time</md-table-head>
+              <md-table-head>Time (s)</md-table-head>
             </md-table-row>
 
             <md-table-row>
               <md-table-cell>All PubMed Publication</md-table-cell>
               <md-table-cell>1900/01/01 ~ 2017/11/17</md-table-cell>
               <md-table-cell>27767389</md-table-cell>
-              <md-table-cell>1 h 56 m 39 s</md-table-cell>
+              <md-table-cell>6999(&lt;2h)</md-table-cell>
             </md-table-row>
 
             <md-table-row>
               <md-table-cell>"Prostate Cancer"</md-table-cell>
               <md-table-cell>1900/01/01 ~ 2017/11/17</md-table-cell>
               <md-table-cell>149844</md-table-cell>
-              <md-table-cell>31 s</md-table-cell>
+              <md-table-cell>31</md-table-cell>
             </md-table-row>
 
             <md-table-row>
               <md-table-cell>"Alzheimer's disease"</md-table-cell>
               <md-table-cell>1900/01/01 ~ 2017/11/17</md-table-cell>
               <md-table-cell>130017</md-table-cell>
-              <md-table-cell>45 s</md-table-cell>
+              <md-table-cell>45</md-table-cell>
             </md-table-row>
           </md-table>
         </div>
