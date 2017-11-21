@@ -1,7 +1,8 @@
 <template>
   <div class="root">
     <div class="left-frame">
-      <md-whiteframe md-elevation="2">
+      <h1>Performance Test</h1>
+      <md-whiteframe md-elevation="2" class="bcbTemp">
         <scatter-chart
           :data="numberOfPaper.data"
           :option="numberOfPaper.option"
@@ -55,5 +56,10 @@ export default {
 
 .left-frame .md-whiteframe:last-child {
   margin-bottom: 0;
+}
+
+.bcbTemp {
+  margin: 15px;
+  padding: 15px;
 }
 </style>
