@@ -3,8 +3,7 @@
   <div>
     <h1>Welcome to GENAX</h1>
     <h4>GENAX uses the keywords you enter to dynamically find genes associated with your keywords.</h4>
-    <p>For given keywords, GENAX finds keyword related genes. GENAX usesE-utilitiesof Entrez to collect papers. E-utilities is an API that allows users to browse Entrez's database. GENAX uses these features of E-utilites to collect PubMed paper for your keywords. GENAX's method of collecting papers allows users to query complex and specific keywords. In the next chapter, you will learn how to build keywords.</p>
-    <p>GENAX collects papers from PubMed using the E-utilities of Entrez. GENAX collects papers using the time period, allowing users to search for articles in a dynamic and complex way, regardless of time. What's more, you can use the time period to see which genes are attracting attention in the desired age.</p>
+    <p>GENAX is a web-based sever which extracts gene-gene interactions from the biomedical literature. The proposed tool provides several customizing options which include time, cut-off, weight of edge and so on. Through dynamic collecting, GENAX always provides knowledge extracted from the latest publication. Furthermore, all analysis re-sults can be downloaded as csv file format.</p>
   </div>
  </md-whiteframe>
 </template>

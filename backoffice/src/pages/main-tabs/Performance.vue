@@ -4,7 +4,7 @@
       <div class="title-container">
         <h1>Performance Test</h1>
         <span class="md-body-1">The performance of GENAX depends on the number of papers and the support cut off value.</span>
-        <span class="md-body-1">The performance of GENAX is linearly proportional to the number of papers. Performance is also linearly proportional to the absolute value of log(support cut).</span>
+        <span class="md-body-1">It is linearly proportional to the number of papers the absolute value of log<sub>10</sub>(support cut).</span>
       </div>
       <md-whiteframe class="chart-container" md-elevation="2">
         <div class="chart-instruction">
@@ -12,7 +12,7 @@
           <span class="md-body-1">In order to investigate the effect of the number of papers on the performance of GENAX, we measured the time of the work by changing the time period of the paper about the same query and support cut. The search term is "Cancer" and the time period is 1 year, 2 years, ..., 18 years ago, from November 17, 2017. Support cut and other options are the default set provided by GENAX.</span>
           <br>
           <span class="md-body-1">As the number of target papers increased, the working time increased linearly in proportion to this. The equation for the linear trend line of this data is as below</span>
-          <span class="md-body-1">y = 0.000537x - 59.0 and R² is 0.991.</span>
+          <span class="md-body-1">y = 0.000537x - 59.0 (R² = 0.991)</span>
           <br>
           <span class="md-body-1">Performance of sample query with default options are like below table.</span>
           <div>
