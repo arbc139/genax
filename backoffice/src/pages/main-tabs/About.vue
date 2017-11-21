@@ -10,6 +10,18 @@
       </div>
       <md-whiteframe class="chart-container" md-elevation="2">
         <img src="/static/GENAX_Step.png" style="height: 100%; width: 100%; background-size: contain;">
+        <h4>Input</h4>
+        <span class="md-body-1">GENAX makes query from user given keywords and time period. From the query, GENAX collects papers from PubMed</span>
+        <h4>Paper Collecting</h4>
+        <span class="md-body-1">GENAX collects papers with multi-thread collecting. It allows dynamic paper collecting of GENAX. After all the target papers are collected, GENAX extracts MeSH terms from the papers.</span>
+        <span class="md-body-1">MeSH terms of the papers are converted to gene symbols with pre-defined rules.</span>
+        <h4>Network Building</h4>
+        <span class="md-body-1">From the paper-gene relationship, GENAX makes edges of the gene network. Genes that are simultaneously referenced in the same paper are co-occurring gene. And Genes that appear alone in the papers are single-occurring genes.</span>
+        <span class="md-body-1">GENAX makes contingency table for all co-occurring genes and calculate statistical significance of each co-occurring gene pair.</span>
+        <span class="md-body-1">All the gene pairs are edges of the gene network and statistical significance of the gene pair is weight of the edge.</span>
+        <span class="md-body-1">We can make another network by adding single occurring nodes to the co-occurring gene network.</span>
+        <h4>Network Analyzing</h4>
+        <span class="md-body-1">With the two networks, GENAX calculates centrality of each gene node. User can get the gene scores from that calculation. Also User can access the references where the genes are collected.</span>
       </md-whiteframe>
     </md-whiteframe>
 </div>
