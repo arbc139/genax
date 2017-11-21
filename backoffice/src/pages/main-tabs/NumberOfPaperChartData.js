@@ -20,8 +20,8 @@ const rawData = [
 ];
 
 const linearGraphData = [
-  { x: 117938, y: 0 },
-  { x: 2059763, y: 970 },
+  { x: 129295, y: 5.6785 },
+  { x: 2059763, y: 970.9125 },
 ];
 
 export const data = {
