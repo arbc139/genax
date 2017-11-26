@@ -52,6 +52,8 @@ status = subprocess.call(command,shell=True)
 if status != 0:
 	query = "UPDATE JOB SET NETWORK = -4 WHERE J_ID = (%s)"
 	curs.execute(query,j_id)
+	query = "UPDATE JOB_LOG SET STATUS = -1 WHERE J_ID = (%s)"
+	curs.execute(query,j_id)
 """
 python_call ="nohup python "
 main_dir = " /home/"+mysqlId+"/Capstone-2017-2/gena/codes/weka/des_counter.py "

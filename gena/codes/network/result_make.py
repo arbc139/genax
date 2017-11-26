@@ -92,3 +92,5 @@ except:
     pass
 query = "UPDATE JOB SET NETWORK = 6 WHERE J_ID = (%s)"
 curs.execute(query,j_id)
+query = "UPDATE JOB_LOG SET STATUS = 0 WHERE J_ID = (%s)"
+curs.execute(query,j_id)
