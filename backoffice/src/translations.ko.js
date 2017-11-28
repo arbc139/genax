@@ -124,7 +124,7 @@ export default {
     title: 'Select node size page',
     nodeSize: {
       label: 'Node Size',
-      errorMessage: 'Please select node size range in 1 ~ 100',
+      errorMessage: 'Please select node size range in 0.001 ~ 100',
     },
     metricScore: {
       label: 'Minimum Support of Single Occurring Node',
