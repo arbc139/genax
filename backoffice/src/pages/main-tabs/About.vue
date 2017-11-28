@@ -6,6 +6,7 @@
         <h4>GENAX uses the keywords you enter to dynamically find genes associated with your keywords.</h4>
         <span class="md-body-1">GENAX is a web-based server that extracts gene-gene interactions from the biomedical literature. GENAX provides several customizing options, including time, cut-off, weight of edge, and so on. Through dynamic collection, GENAX always provides knowledge extracted from the latest publications. Furthermore, all analysis results can be downloaded in .csv file format.</span>
         <span class="md-body-1">All instructions needed to run GENAX are available <a href="http://help.genax.tools">here</a> (or click on the document button in the right corner). The scheme below illustrates the overall processing steps of GENAX.</span>
+        <span class="md-body-1">The scheme below illustrates the overall processing steps of GENAX.</span>
       </div>
       <md-whiteframe class="chart-container" md-elevation="2">
         <img src="/static/GENAX_Step.png" style="height: 80%; width: 80%; background-size: contain;">
