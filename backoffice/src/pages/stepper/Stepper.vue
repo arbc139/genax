@@ -201,7 +201,7 @@ export default Vue.component('stepper', {
     },
     enablePassSelectNodeSize() {
       const conditions = {
-        nodeSize: this.nodeSize > 0 && this.nodeSize <= 100,
+        nodeSize: this.nodeSize >= 0.0001 && this.nodeSize <= 100,
         metricScore: this.metricScore >= 0.000001 && this.metricScore <= 1,
       };
       const condition = _.every(conditions);

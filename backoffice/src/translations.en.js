@@ -47,11 +47,11 @@ export default {
       },
     },
     help: {
-      title: 'Welcome to GENAX',
+      title: 'Build Keywords',
       instructions: [
-        { id: 0, content: 'For given keywords, GENAX will find out which genes are related to them.' },
+        { id: 0, content: 'GENAX uses the keywords you enter to dynamically find genes associated with your keywords.' },
         { id: 1, content: 'You can add or remove keywords by pressing the button.' },
-        { id: 2, content: 'You can also take advantage of the advance search feature of PubMed.' },
+        { id: 2, content: 'You can use PubMed\'s Advanced Search when entering the keywords.' },
         {
           id: 4,
           content: 'To learn more about keyword building, ',
@@ -109,7 +109,7 @@ export default {
     help: {
       title: 'Please Set Co-occurrence Mining Options.',
       instructions: [
-        { id: 0, content: 'GENAX uses co-occurrence mining to construct networks between genes.' },
+        { id: 0, content: 'GENAX uses co-occurrence mining to search for genes simultaneously appearing in articles.' },
         { id: 1, content: 'The options on the left are the conditions necessary to run the GENAX algorithm.' },
         { id: 2, content: 'Default options are provided.' },
         {
