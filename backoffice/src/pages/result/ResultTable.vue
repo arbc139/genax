@@ -82,7 +82,7 @@
                 <a
                   target="_blank"
                   class="a-tag-hover"
-                  :href="`http://www.genax.tools/#/result/${this.jobKey}/references/${row.hgncId}`"
+                  :href="`http://www.genax.tools/#/result/${row.jobKey}/references/${row.hgncId}`"
                 >
                   {{ row.symbol }}
                 </a>
@@ -219,6 +219,7 @@ export default Vue.component('result-table', {
           const rawGeneScores = response.body;
           this.geneScores = _.map(rawGeneScores, geneScore => ({
             jobId: geneScore.J_ID,
+            jobKey: this.jobKey,
             netId: geneScore.NET_ID,
             hgncId: geneScore.HGNC_ID,
             symbol: geneScore.SYMBOL,
