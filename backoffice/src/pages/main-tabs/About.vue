@@ -4,21 +4,20 @@
       <div class="title-container">
         <h1>Welcome to GENAX</h1>
         <h4>GENAX uses the keywords you enter to dynamically find genes associated with your keywords.</h4>
-        <span class="md-body-1">GENAX is a web-based sever which extracts gene-gene interactions from the biomedical literature. GENAX provides several customizing options which include time, cut-off, weight of edge and so on. Through dynamic collecting, GENAX always provides knowledge extracted from the latest publication. Furthermore, all analysis re-sults can be downloaded as csv file format.</span>
-        <span class="md-body-1">All instruction needed to run GENAX is available <a href="http://help.genax.tools">here</a>.(or click right corner doucument button)</span>
-        <span class="md-body-1">Below is the overall processing step of GENAX.</span>
+        <span class="md-body-1">GENAX is a web-based server that extracts gene-gene interactions from the biomedical literature. GENAX provides several customizing options, including time, cut-off, weight of edge, and so on. Through dynamic collection, GENAX always provides knowledge extracted from the latest publications. Furthermore, all analysis results can be downloaded in .csv file format.</span>
+        <span class="md-body-1">All instructions needed to run GENAX are available <a href="http://help.genax.tools">here</a> (or click on the document button in the right corner). The scheme below illustrates the overall processing steps of GENAX.</span>
       </div>
       <md-whiteframe class="chart-container" md-elevation="2">
         <img src="/static/GENAX_Step.png" style="height: 80%; width: 80%; background-size: contain;">
       </md-whiteframe>
       <h4>Input</h4>
-        <span class="md-body-1">GENAX makes query from user given keywords and time period. From the query, GENAX collects papers from PubMed.</span>
-        <h4>Paper Collecting</h4>
-        <span class="md-body-1">GENAX collects papers with multi-thread collecting. It allows dynamic paper collecting of GENAX. After all the target papers are collected, GENAX extracts MeSH terms from the papers. MeSH terms of the papers are converted to gene symbols with pre-defined rules.</span>
+        <span class="md-body-1">GENAX makes a query from user-given keywords and time period. From the query, GENAX collects relevant articles from PubMed.</span>
+        <h4>Paper Collect</h4>
+        <span class="md-body-1">GENAX collects articles with a multi-thread collecting strategy, which allows for a dynamic literature retrieval feature. After all the target papers are collected, GENAX extracts MeSH terms from the papers, which are then converted to gene symbols according to pre-defined rules.</span>
         <h4>Network Building</h4>
-        <span class="md-body-1">From the paper-gene relationship, GENAX makes edges of the gene network. Genes that are simultaneously referenced in the same paper are the co-occurring genes. And Genes that appear alone in the papers are single-occurring genes. GENAX makes contingency tables for all co-occurring gene pair and calculate statistical significance of each co-occurring gene pair. All the gene pairs become edges of the gene network and statistical significance of the gene pair is the weight of the edge. GENAX makes another network by adding single occurring nodes to the co-occurring gene network.</span>
-        <h4>Network Analyzing</h4>
-        <span class="md-body-1">After network building ends, there are two networks. One is co-occurring genes only network, and the other is co-occurring genes plus single-occurring genes network. With those two networks, GENAX calculates centrality of each gene node. User can get the gene scores from centrality calculation. Also User can access the references where the genes are collected.</span>
+        <span class="md-body-1">From the paper-gene relationship, GENAX creates edges of the gene network. Genes that are simultaneously referenced in the same paper are the co-occurring genes, and genes that appear alone in the papers are single-occurring genes. GENAX makes contingency tables for all co-occurring gene pairs and calculates the statistical significance of each co-occurring gene pair. All of the gene pairs become edges of the gene network, and statistical significance of the gene pair is based on the weight of the edge. GENAX then creates another network by adding single-occurring nodes to the co-occurring gene network.</span>
+        <h4>Network Analysis</h4>
+        <span class="md-body-1">After network building is complete, there are two networks generated. One is the co-occurring genes only network and the other is the co-occurring genes plus single-occurring genes network. With these two networks, GENAX calculates the centrality of each gene node. The user can obtain the gene scores from the centrality calculation. The user can also access the references from which the genes are collected.</span>
     </md-whiteframe>
 </div>
 
