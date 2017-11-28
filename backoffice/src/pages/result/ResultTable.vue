@@ -79,9 +79,18 @@
               v-for="row in indexedPagedScores" :key="row.hgncId" :md-item="row"
             >
               <md-table-cell>
-                <a class="a-tag-hover" @click="() => onSymbolClick(row.hgncId)">
+                <a
+                  target="_blank"
+                  class="a-tag-hover"
+                  :href="`http://www.genax.tools/#/result/${this.jobKey}/references/${row.hgncId}`"
+                >
                   {{ row.symbol }}
                 </a>
+                <!--
+                  <a class="a-tag-hover" @click="() => onSymbolClick(row.hgncId)">
+                  {{ row.symbol }}
+                  </a>
+                -->
               </md-table-cell>
               <md-table-cell>
                 <a
