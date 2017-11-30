@@ -12,7 +12,7 @@ yonsei = requests.get(url)
 old_html = yonsei.text
 while True:
 	yonsei = requests.get(url)
-	sec = random.randrange(5,10)
+	sec = random.randrange(10,20)
 	print(sec,yonsei.status_code)
 	new_html = yonsei.text
 	if old_html == new_html:
