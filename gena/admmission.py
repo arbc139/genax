@@ -24,7 +24,7 @@ while True:
 		smtp = smtplib.SMTP('smtp.gmail.com', 587)
 	        smtp.ehlo()      # say Hello
 	        smtp.starttls()  # TLS
-	        smtp.login('genaxity@gmail.com', 'bio53295')
+	        smtp.login('genaxity@gmail.com', '')
 	        msg = MIMEText(
 	        "Yonsei Medical School 1st Admission Announced.\n\n"
 		"Check Your Result.\n\n"
