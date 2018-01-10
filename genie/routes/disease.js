@@ -18,9 +18,10 @@ router.get('/', (req, res) => {
 
 // (GET) Find diseases by keyword.
 router.get('/:keyword/', (req, res) =>  {
-  const keywordAll = `"${req.params.keyword}"`;
-  const keywordWord = `" ${req.params.keyword}"`;
-  const keywordStart = `"^${req.params.keyword}"`;
+  const replacedKeyword = req.params.keyword.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+  const keywordAll = `"${replacedKeyword}"`;
+  const keywordWord = `" ${replacedKeyword}"`;
+  const keywordStart = `"^${replacedKeyword}"`;
   const query = `(SELECT * FROM DISEASE WHERE DIS_NAME REGEXP ${keywordStart}) \
       UNION (SELECT * FROM DISEASE WHERE DIS_NAME REGEXP ${keywordWord}) \
       UNION (SELECT * FROM DISEASE WHERE DIS_NAME REGEXP ${keywordAll}) \
