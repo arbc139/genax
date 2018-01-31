@@ -1,7 +1,7 @@
 import re
 import pymysql
 import csv
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 with open('/home/"+mysqlId+"/Capstone-2017-2/gena/meshfile/CTD_pathways.csv', 'r') as csvfile:

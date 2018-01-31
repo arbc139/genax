@@ -6,7 +6,7 @@ import numpy as np
 import math
 from multiprocessing import Manager, Pool, Process,Value
 def workerPreset(j_id,mysqlId):
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query = "SELECT D.HGNC_ID, B.PMID FROM JOB_PMID A, PMID_SUP B, SUP C, GENE D WHERE A.J_ID = "+j_id+" AND A.PMID=B.PMID AND B.S_ID = C.S_ID AND C.HGNC_ID = D.HGNC_ID AND D.HGNC_ID !='N/A' GROUP BY D.HGNC_ID, B.PMID ORDER BY PMID;"
 	curs.execute(query)
@@ -128,7 +128,7 @@ if __name__ == '__main__':
 	max_node = Value('d')
 	min_node = Value('d')
 
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query = "SELECT MIN_SUP, MAX_PVAL,J_KEY FROM JOB WHERE J_ID = (%s)"
 	curs.execute(query,j_id)

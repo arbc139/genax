@@ -16,7 +16,7 @@ if __name__ == '__main__':
 	parser = None
 	mysqlId = options.mysqlId
 	mysqlIdParam = " "+mysqlId+" "
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 
 	query = "SELECT * FROM JOB where WEKA = 4 AND NETWORK = 0"

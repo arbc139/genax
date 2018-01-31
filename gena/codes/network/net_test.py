@@ -8,7 +8,7 @@ import math
 
 j_id = sys.argv[1]
 mysqlId = sys.argv[2]
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 query = "SELECT PMID_COUNT,NODE_SIZE,EDGE_NUM_ASSO,EDGE_NUM_COOC,J_KEY,COOC_EM FROM JOB where J_ID = "+j_id
 curs.execute(query)
@@ -257,7 +257,7 @@ except:
         pass
 
 
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 query = "INSERT INTO JOB_GENE_3 (J_ID, HGNC_ID, Degree, Betweenness, Closeness, Eigenvector,Katz, ClusteringCoef, NET_ID) VALUES ((%s),(%s),(%s),(%s),(%s),(%s),(%s),(%s),(%s))"
 #curs.executemany(query,AssoQueryInput)
