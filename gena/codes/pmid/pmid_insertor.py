@@ -35,7 +35,7 @@ for event, element in context:
 	if article is not None:
 		if article.find("ArticleTitle").text is not None:
 			title = article.find("ArticleTitle").text.encode('utf-8').strip()
-		if article.find("Abstract") is not None and \
+    if article.find("Abstract") is not None and \
 			article.find("Abstract").find("AbstractText") is not None and \
 			article.find("Abstract").find("AbstractText").text is not None:
 			abstract = article.find("Abstract").find("AbstractText").text.encode('utf-8').strip()
