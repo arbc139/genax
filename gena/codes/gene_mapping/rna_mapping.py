@@ -1,6 +1,6 @@
 import pymysql
 
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 query =  "SELECT * FROM SUP WHERE S_NAME REGEXP 'RNA' AND NOT S_NAME REGEXP 'MICRORNA' AND F_SCORE > 5 AND F_SCORE-N_SCORE >2"

@@ -27,7 +27,7 @@ try:
   weka_manager.filter_objects()
   # weka_manager.normalize()
 
-  conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+  conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
   curs = conn.cursor(pymysql.cursors.DictCursor)
   query = "SELECT EM FROM JOB WHERE J_ID = (%s) ;"
   curs.execute(query ,options.job_id)
@@ -56,7 +56,7 @@ with open(options.output_file, 'w+') as out_file:
       out_file.write(out_str)
   except:
     pass
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 query = "UPDATE JOB SET EDGE_NUM_ASSO = (%s) WHERE J_ID = (%s) ;"
 curs.execute(query ,(counter,options.job_id))

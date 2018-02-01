@@ -5,7 +5,7 @@ mysqlId = sys.argv[2]
 filename = "/home/"+mysqlId+"/Capstone-2017-2/gena/files/"+j_id+"/input.arff"
 arff = open(filename,'w')
 
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 query = "select DISTINCT E.HGNC_ID from JOB_PMID A, PMID B, PMID_SUP C, SUP D, GENE E WHERE A.J_ID = "+j_id+" AND A.PMID = B.PMID AND B.PMID = C.PMID AND C.S_ID = D.S_ID AND D.HGNC_ID = E.HGNC_ID AND E.HGNC_ID != 'N/A';"
@@ -13,7 +13,7 @@ curs.execute(query)
 symbols = curs.fetchall()
 
 curs.close()
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 if len(symbols) == 0:
@@ -28,7 +28,7 @@ arff.write('@data\n')
 
 
 curs.close()
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 query = "SELECT DISTINCT A.PMID FROM JOB_PMID A, PMID_SUP B, SUP C, GENE D WHERE A.J_ID = (%s) AND  B.PMID = A.PMID AND B.S_ID = C.S_ID AND C.HGNC_ID = D.HGNC_ID AND D.HGNC_ID != 'N/A' "
@@ -38,7 +38,7 @@ pm_ids = curs.fetchall()
 
 
 curs.close()
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 thesis = []
@@ -62,15 +62,17 @@ for pm_id in pm_ids:
 	arff.write(outstr+'\n')
 
 curs.close()
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 query = "INSERT INTO GENE_PMID(J_ID,HGNC_ID,PMID) SELECT A.J_ID, D.HGNC_ID, A.PMID FROM JOB_PMID A, PMID B, PMID_SUP C, SUP D, GENE E WHERE A.J_ID = (%s) AND E.HGNC_ID != 'N/A' AND A.PMID = B.PMID AND B.PMID = C.PMID AND C.S_ID = D.S_ID AND D.HGNC_ID = E.HGNC_ID;"
 curs.execute(query,j_id)
 curs.close()
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 query = "UPDATE JOB SET WEKA =2 WHERE J_ID = (%s)"
 curs.execute(query,j_id	)
 
 conn.close()	
+
+

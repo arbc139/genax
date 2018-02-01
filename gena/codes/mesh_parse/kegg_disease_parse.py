@@ -1,7 +1,7 @@
 import re
 import pymysql
 
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 f = open('/home/"+mysqlId+"/Capstone-2017-2/gena/meshfile/br08402.keg', 'r')

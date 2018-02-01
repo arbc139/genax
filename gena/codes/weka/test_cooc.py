@@ -7,7 +7,7 @@ import math
 import operator
 from multiprocessing import Manager, Pool, Process,Value
 def workerPreset(j_id,mysqlId):
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query = "SELECT D.HGNC_ID, B.PMID FROM JOB_PMID A, PMID_SUP B, SUP C, GENE D WHERE A.J_ID = "+j_id+" AND A.PMID=B.PMID AND B.S_ID = C.S_ID AND C.HGNC_ID = D.HGNC_ID AND D.HGNC_ID !='N/A' GROUP BY D.HGNC_ID, B.PMID ORDER BY PMID;"
 	curs.execute(query)
@@ -92,7 +92,7 @@ def worker((i,totalEdgeHit,min_sup,j_id,mysqlId)):
 		b = 1
 		c = 1
 		d = 1
-		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 		curs = conn.cursor(pymysql.cursors.DictCursor)
 		
 		#a
@@ -153,7 +153,7 @@ if __name__ == '__main__':
     contingency = Manager().dict()
     max_node = Value('d')
     min_node = Value('d')
-    conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+    conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
     curs = conn.cursor(pymysql.cursors.DictCursor)
     query = "SELECT MIN_SUP, MAX_PVAL,J_KEY,MIN_NODE_SUP FROM JOB WHERE J_ID = (%s)"
     curs.execute(query,j_id)
@@ -223,7 +223,7 @@ if __name__ == '__main__':
 
 
 	curs.close()
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8') 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
     query = "UPDATE JOB SET EDGE_NUM_COOC = (%s) WHERE J_ID = (%s) ;"
     curs.execute(query ,(cooc_counter,j_id	))
@@ -233,3 +233,5 @@ if __name__ == '__main__':
     query = "DROP TABLE RELATION_"+j_id+" ; "
     curs.execute(query)
     conn.close()	
+
+
