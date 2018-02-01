@@ -31,17 +31,12 @@ for event, element in context:
 	medline = med_cite.find("MedlineJournalInfo")
 	title = ""
 	country =""
-  abstract = ""
 	if article is not None:
 		if article.find("ArticleTitle").text is not None:
-			title = article.find("ArticleTitle").text.encode('utf-8').strip()
-    if article.find("Abstract") is not None and \
-      article.find("Abstract").find("AbstractText") is not None and \
-      article.find("Abstract").find("AbstractText").text is not None:
-      abstract = article.find("Abstract").find("AbstractText").text.encode('utf-8').strip()
+			title = article.find("ArticleTitle").text.encode('utf-8').strip()  
 	if medline is not None:
 		if medline.find("Country") is not None:
-			country = medline.find("Country").text.encode('utf-8').strip()
+			country = medline.find("Country").text.encode('utf-8').strip()  
 	chemical_list = med_cite.find("ChemicalList")
 	heading_list = med_cite.find("MeshHeadingList")
 	#print (country)
@@ -63,7 +58,7 @@ for event, element in context:
 				if child.find("DescriptorName").attrib['MajorTopicYN'] == "Y":
 					qual_list.append((child.find("QualifierName").attrib['UI'], child.find("DescriptorName").attrib['MajorTopicYN'],pmid))"""
 	pmid_list.append((pmid,country))
-	pmid_content_list.append((pmid, title, abstract))
+	pmid_content_list.append((pmid,title))
 	job_pmid_list.append((job_num,pmid))
 	counter = counter + 1
 	if counter  > 100000:
@@ -74,7 +69,7 @@ for event, element in context:
 		query = "INSERT IGNORE INTO PMID (PMID,COUNTRY ) VALUES (%s,%s)"
 		curs.executemany(query, pmid_list)
 		del pmid_list[:]
-		query = "INSERT IGNORE INTO PMID_CONTENT_2 (PMID, TITLE, ABSTRACT) VALUES (%s,%s,%s)"
+		query = "INSERT IGNORE INTO PMID_CONTENT_2 (PMID,TITLE ) VALUES (%s,%s)"
 		curs.executemany(query, pmid_content_list)
 		del pmid_content_list[:]
 		query	= "INSERT IGNORE INTO PMID_SUP(S_ID, MAJOR,PMID) VALUES	(%s,%s, %s)"
