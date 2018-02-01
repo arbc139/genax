@@ -16,7 +16,7 @@ if __name__ == '__main__':
 	parser = None
 	mysqlId = options.mysqlId
 	mysqlIdParam = " "+mysqlId+" "
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query = "SELECT * FROM JOB where PMID_COLLECT=2 AND DO_PMID_INSERT =5 AND WEKA = 0"
 	curs.execute(query)

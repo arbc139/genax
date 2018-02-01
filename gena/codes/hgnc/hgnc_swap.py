@@ -4,7 +4,7 @@ from xml.etree import ElementTree
 import time
 import sys
 
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 #query ="SELECT S_NAME,S_ID,PROCESSED FROM SUP WHERE  F_NAME IS NULL ORDER BY IDX asc"
 query = "SELECT * FROM SUP WHERE S_NAME REGEXP 'MIRN-';"

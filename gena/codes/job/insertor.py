@@ -17,7 +17,7 @@ if __name__ == '__main__':
 	parser = None
 	mysqlId = options.mysqlId
 	mysqlIdParam = " "+mysqlId+" "
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query = "SELECT * FROM JOB where DO_PMID_INSERT =1"
 	curs.execute(query)
@@ -48,7 +48,7 @@ if __name__ == '__main__':
 		print(pmid_count)
 		curs.close()
 
-		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
+		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 		curs = conn.cursor(pymysql.cursors.DictCursor)
 		query = "UPDATE JOB SET PMID_COUNT = (%s) WHERE J_ID = (%s);"
 		curs.execute(query,(pmid_count,j_id))

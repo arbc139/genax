@@ -4,7 +4,7 @@ from xml.etree import ElementTree
 import time
 import sys
 
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 start_idx = sys.argv[1]
 end_idx = sys.argv[2]

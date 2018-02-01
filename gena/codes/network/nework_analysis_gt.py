@@ -11,7 +11,7 @@ j_id = sys.argv[1]
 mysqlId = sys.argv[2]
 
 
-#conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
+#conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 #curs = conn.cursor(pymysql.cursors.DictCursor)
 #query = "SELECT NODE_SIZE,EDGE_NUM_ASSO,EDGE_NUM_COOC FROM JOB where J_ID = "+j_id
 #curs.execute(query)
@@ -240,7 +240,7 @@ for node in cooc_dict:
 	asso_list.append((str(j_id), node, cooc_dict[node][0],cooc_dict[node][1],cooc_dict[node][2],cooc_dict[node][3],cooc_dict[node][4],cooc_dict[node][5],cooc_dict[node][6],"3"))
 for node in cooc_node_dict:
 	asso_list.append((str(j_id), node, cooc_node_dict[node][0],cooc_node_dict[node][1],cooc_node_dict[node][2],cooc_node_dict[node][3],cooc_node_dict[node][4],cooc_node_dict[node][5],cooc_node_dict[node][6],"4"))
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 query = "INSERT INTO JOB_GENE_2 (J_ID, HGNC_ID, Degree, Betweenness, Closeness, Load_value, Harmonic, Eigenvector, Ktaz, NET_ID) VALUES ((%s),(%s),(%s),(%s),(%s),(%s),(%s),(%s),(%s),(%s))"
 curs.executemany(query,asso_list)
