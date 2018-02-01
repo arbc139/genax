@@ -9,7 +9,7 @@ import time
 import datetime
 job_num = sys.argv[1]
 
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 query = "SELECT * FROM JOB where J_ID ="+job_num
 curs.execute(query)

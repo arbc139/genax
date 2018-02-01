@@ -10,7 +10,7 @@ import time
 job_num = sys.argv[1]
 mysqlId = sys.argv[2]
 
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306)
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307)
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 pmid_list = []
@@ -69,7 +69,7 @@ for event, element in context:
 	if counter  > 100000:
 		counter = 0
 		curs.close()
-		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 		curs = conn.cursor(pymysql.cursors.DictCursor)
 		query = "INSERT IGNORE INTO PMID (PMID,COUNTRY ) VALUES (%s,%s)"
 		curs.executemany(query, pmid_list)
@@ -132,7 +132,7 @@ for event, element in context:
 	if counter  > 100000:
 		counter = 0
 		curs.close()
-		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 		curs = conn.cursor(pymysql.cursors.DictCursor)
 		query = "INSERT IGNORE INTO PMID (PMID,COUNTRY ) VALUES (%s,%s)"
 		curs.executemany(query, pmid_list)
@@ -155,7 +155,7 @@ for event, element in context:
 while True:
 		try:
 			curs.close()
-			conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+			conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 			curs = conn.cursor(pymysql.cursors.DictCursor)
 			query = "INSERT IGNORE INTO PMID (PMID,COUNTRY ) VALUES (%s,%s)"
 			curs.executemany(query, pmid_list)
@@ -166,7 +166,7 @@ while True:
 while True:
 		try:
 			curs.close()
-			conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+			conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 			curs = conn.cursor(pymysql.cursors.DictCursor)
 			query = "INSERT IGNORE INTO PMID_CONTENT_2 (PMID,TITLE ) VALUES (%s,%s)"
 			curs.executemany(query, pmid_content_list)
@@ -177,7 +177,7 @@ while True:
 while True:
 		try:
 			curs.close()
-			conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+			conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 			curs = conn.cursor(pymysql.cursors.DictCursor)
 			query	= "INSERT IGNORE INTO PMID_SUP(S_ID, MAJOR,PMID) VALUES	(%s,%s, %s)"
 			curs.executemany(query, sup_list)
@@ -188,7 +188,7 @@ while True:
 while True:
 		try:
 			curs.close()
-			conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+			conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 			curs = conn.cursor(pymysql.cursors.DictCursor)
 			query = "INSERT IGNORE INTO JOB_PMID (J_ID, PMID) VALUES (%s, %s)"
 			curs.executemany(query, job_pmid_list)
@@ -199,7 +199,7 @@ while True:
 while True:
 		try:
 			curs.close()
-			conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+			conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 			curs = conn.cursor(pymysql.cursors.DictCursor)
 			query = "UPDATE JOB SET DO_PMID_INSERT =5 WHERE J_ID = (%s)"
 			curs.execute(query,job_num)

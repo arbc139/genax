@@ -7,7 +7,7 @@ j_key = sys.argv[2]
 filename = "/home/"+mysqlId+"/Capstone-2017-2/gena/files/"+j_id+"/"+j_key+"_edgeCooc.csv"
 net_asso = open(filename,'r')
 csv_write_list = []
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 lines = net_asso.readlines()
 for line in lines:

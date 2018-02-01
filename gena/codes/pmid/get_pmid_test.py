@@ -50,7 +50,7 @@ def worker((job_num,i)):
 def worker2((job_num,i,mysqlId)):
 	step = 500000
 	print ("length of job has pmid in the thread",len(job_has_pmid))
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	#query = "CREATE TEMPORARY TABLE temp_uilist_"+job_num+"_"+str(i)+"(pmid int(11));"
 	query1 = "CREATE TABLE temp_uilist_"+job_num+"_"+str(i)+"(pmid int(11));"
@@ -65,7 +65,7 @@ def worker2((job_num,i,mysqlId)):
 	for row in rows:
 		exist_pmid.append((job_num,row['pmid']))"""
 	curs.close()
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query4 = "SELECT STRAIGHT_JOIN a.pmid FROM temp_uilist_"+job_num+"_"+str(i)+" a LEFT JOIN PMID b ON a.pmid = b.pmid WHERE b.pmid IS NULL;"
 	curs.execute(query4)
@@ -73,13 +73,13 @@ def worker2((job_num,i,mysqlId)):
 	for row in rows:
 		new_pmid.append(str(row['pmid']))
 	curs.close()
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query1 = "DROP  TABLE temp_uilist_"+job_num+"_"+str(i)
 	curs.execute(query1)
 def worker3((job_num,i,mysqlId)):
 	step = 500000
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query = "INSERT IGNORE INTO JOB_PMID (J_ID, PMID) VALUES (%s,%s)"
 	curs.executemany(query, exist_pmid[i*step:(i+1)*step-1])
@@ -88,7 +88,7 @@ if __name__ == '__main__':
 
 	job_num = sys.argv[1]
 	mysqlId = sys.argv[2]
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query = "SELECT * FROM JOB where J_ID ="+job_num
 	curs.execute(query)
@@ -187,7 +187,7 @@ if __name__ == '__main__':
 		if len(line) > 0:
 			if line[0] == "<":
 				curs.close()
-				conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+				conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 				curs = conn.cursor(pymysql.cursors.DictCursor)
 				query = "UPDATE JOB SET TOO_SMALL=1 WHERE J_ID=(%s)"
 				curs.execute(query,job_num)
@@ -201,7 +201,7 @@ if __name__ == '__main__':
 	for i in range(0,int(int(count)/step)+1):
 		argv_list2.append((job_num,i,mysqlId))
 	curs.close()
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	p2 = Pool(4)
 	p2.map(worker2,argv_list2)
@@ -217,7 +217,7 @@ if __name__ == '__main__':
 	for i in range(0,int(int(count)/step)+1):
 		argv_list3.append((job_num,i,mysqlId))
 	curs.close()
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	p3 = Pool(4)
 	p3.map(worker3,argv_list3)
@@ -235,7 +235,7 @@ if __name__ == '__main__':
 	f.write(epost_output.text)
 	f.close()
 	curs.close()
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query = "UPDATE JOB SET PMID_COLLECT =2 WHERE J_ID = (%s)"
 	curs.execute(query,job_num)      
@@ -283,14 +283,14 @@ if __name__ == '__main__':
 		f.write("</PubmedArticleSet>")
 		f.close()
 		curs.close()
-		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 		curs = conn.cursor(pymysql.cursors.DictCursor)
 		query = "UPDATE JOB SET DO_PMID_INSERT =1 WHERE J_ID = (%s)"
 		curs.execute(query,job_num)         
 	else:
 		
 		curs.close()
-		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 		curs = conn.cursor(pymysql.cursors.DictCursor)
 		query = "SELECT COUNT(*) FROM JOB_PMID WHERE J_ID = (%s) ;"
 		curs.execute(query,job_num)
@@ -299,11 +299,11 @@ if __name__ == '__main__':
 		print(pmid_count)
 		curs.close()
 
-		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 		curs = conn.cursor(pymysql.cursors.DictCursor)
 		query = "UPDATE JOB SET PMID_COUNT = (%s) WHERE J_ID = (%s);"
 		curs.execute(query,(pmid_count,job_num))
-		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+		conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 		curs = conn.cursor(pymysql.cursors.DictCursor)
 		query = "UPDATE JOB SET DO_PMID_INSERT =5 WHERE J_ID = (%s)"
 		curs.execute(query,job_num)             

@@ -1,7 +1,7 @@
 import subprocess
 import sys
 import pymysql
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 j_id = sys.argv[1]
@@ -74,6 +74,6 @@ subprocess.call(command,shell=True)
 
 query = "UPDATE JOB SET WEKA =4 WHERE J_ID = (%s)"
 curs.close()
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 curs.execute(query,j_id)      

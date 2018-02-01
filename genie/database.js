@@ -16,6 +16,7 @@ const pool = mysql.createPool({
   host: getField(dbConfig, 'host'),
   user: argv.user,
   password: argv.password,
+  port: 3307,
 });
 
 // Uses query like this.

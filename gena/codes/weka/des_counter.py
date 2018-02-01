@@ -1,7 +1,7 @@
 import sys
 import pymysql
 j_id = sys.argv[1]
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 query = "SELECT  A.PMID, B.D_ID FROM JOB_PMID A, PMID_DES B WHERE A.J_ID = (%s) AND  B.PMID = A.PMID  AND B.MAJOR='Y' "

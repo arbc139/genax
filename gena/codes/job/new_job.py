@@ -19,7 +19,7 @@ if __name__ == '__main__':
 	parser = None
 	mysqlId = options.mysqlId
 	mysqlIdParam = " "+mysqlId+" "
-	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+	conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 	curs = conn.cursor(pymysql.cursors.DictCursor)
 	query = "UPDATE JOB_LOG SET STATUS = -1 WHERE J_ID IN (SELECT J_ID FROM JOB WHERE PMID_COLLECT < 0 OR DO_PMID_INSERT < 0 OR WEKA < 0 OR NETWORK < 0);"
 	curs.execute(query)

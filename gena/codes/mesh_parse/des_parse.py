@@ -4,7 +4,7 @@ import re
 filename = "/home/"+mysqlId+"/Capstone-2017-2/gena/meshfile/desc2017.xml"
 context = etree.iterparse(filename, events=('end',), tag='DescriptorRecord')
 
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 human_reg = re.compile(', [h|H]uman')

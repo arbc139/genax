@@ -1,6 +1,6 @@
 import pymysql
 
-conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3306) 
+conn = pymysql.connect(autocommit ='True', host='localhost', user=mysqlId, password='',db='HUBMED', charset='utf8', port=3307) 
 curs = conn.cursor(pymysql.cursors.DictCursor)
 
 query = "SELECT * FROM SUP WHERE S_NAME REGEXP 'PROTEIN, ' AND F_SCORE !=-1 AND N_SCORE = -1 AND F_SCORE > 5;"
