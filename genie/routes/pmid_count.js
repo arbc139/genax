@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
   }
 
   const queryPeriod = `${req.query.searchQuery} AND ("${startDate}"[Date - Publication] : "${endDate}"[Date - Publication])`
-  const url = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${queryPeriod}&usehistory=y;`;
+  const url = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${queryPeriod}&usehistory=y&api_key=5b1bbe2ef2a0bebe85a9937c9d71e9085f09;`;
   try{
    request(url, function (error, response, body) {
      //console.log('error:', error); // Print the error if one occurred
