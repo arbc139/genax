@@ -21,7 +21,7 @@ def worker((job_num,i)):
 	#cur_time = os.stat("/home/"+mysqlId+"/Capstone-2017-2/gena/files/"+job_num+"/uilist.text").st_mtime
 	efetch_url = base +"efetch.fcgi?db="+entrez_db+"&WebEnv="+web
 	efetch_url += "&query_key="+key+"&retstart="+str(i*retmax)
-	efetch_url += "&retmax="+str(retmax)+"&rettype=uilist&retmode=text"
+	efetch_url += "&retmax="+str(retmax)+"&rettype=uilist&retmode=text&api_key=5b1bbe2ef2a0bebe85a9937c9d71e9085f09"
 	while True:
 		try:
 			efetch_out = requests.get(efetch_url)
