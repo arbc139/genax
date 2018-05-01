@@ -29,7 +29,7 @@ period = "((\""+str(oldDate)+"\"[Date - Entrez] : \""+str(endDate)+"\"[Date - En
 query_string += period
 #assemble the esearch URL
 base = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
-url = base + "esearch.fcgi?db="+entrez_db+"&term="+query_string+"&usehistory=y";
+url = base + "esearch.fcgi?db="+entrez_db+"&term="+query_string+"&usehistory=y&api_key=5b1bbe2ef2a0bebe85a9937c9d71e9085f09";
 
 #do esearch
 output = requests.get(url)
@@ -55,7 +55,7 @@ print(int(int(count)/retmax)+1)
 for i in range(0,int(int(count)/retmax)+1):                                    
     efetch_url = base +"efetch.fcgi?db="+entrez_db+"&WebEnv="+web          
     efetch_url += "&query_key="+key+"&retstart="+str(i*retmax)           
-    efetch_url += "&retmax="+str(retmax)+"&rettype=&retmode=xml"  
+    efetch_url += "&retmax="+str(retmax)+"&rettype=&retmode=xml&api_key=5b1bbe2ef2a0bebe85a9937c9d71e9085f09"  
     while True:
         try:
             efetch_out = requests.get(efetch_url)
