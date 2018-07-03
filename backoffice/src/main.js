@@ -38,7 +38,7 @@ const i18n = new VueI18n({
   },
 });
 
-Vue.http.options.root = 'http://165.132.106.71:3000';
+Vue.http.options.root = 'http://165.132.106.71:4000';
 
 /* eslint-disable no-new */
 new Vue({
