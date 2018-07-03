@@ -2,8 +2,6 @@
   <md-layout
     class="result"
     md-column
-    md-align="center"
-    md-vertical-align="center"
   >
     <md-whiteframe class="statuses-container-frame" md-elevation="2">
       <md-layout class="statuses-container" md-row>
@@ -378,7 +376,7 @@ export default {
 .result {
   width: 90%;
   padding: 16px;
-  margin: auto;
+  //margin: auto;
 }
 
 .statuses-container {
