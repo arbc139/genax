@@ -1,8 +1,5 @@
 <template>
-  <md-layout
-    class="result"
-    md-column
-  >
+  <div class="result">
     <md-whiteframe class="statuses-container-frame" md-elevation="2">
       <md-layout class="statuses-container" md-row>
         <result-status
@@ -63,7 +60,7 @@
       :jobId="jobId"
       :onSymbolClick="hgncId => handleSymbolClick(hgncId)"
     />
-  </md-layout>
+  </div>
 </template>
 
 <script>
@@ -374,9 +371,10 @@ export default {
 
 <style scoped>
 .result {
-  width: 90%;
+  width: 100%;
   padding: 16px;
-  //margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .statuses-container {
@@ -386,7 +384,7 @@ export default {
 .statuses-container-frame {
   width: 100%;
   padding: 8px;
-  margin: 8px 0;
+  margin: 0 0 8px 0;
 }
 
 .status-container {
@@ -395,9 +393,8 @@ export default {
 }
 
 .time-container {
-  width: 100%;
   padding: 16px;
-  margin: 8px;
+  margin: 8px 0;
 }
 
 .parameter-container {
