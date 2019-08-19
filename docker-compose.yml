@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  front:
+    image: arbc139/genax-front:1.0.0
+    ports:
+      - 8080:8080
+    command: ["http-server", "dist", "-p", "8080"]
+  back:
+    image: arbc139/genax-back:1.0.0
+    network_mode: "host"
+    environment:
+      - PORT=4000
+    command: ["npm", "start", "--", "--user=teambio"]
+

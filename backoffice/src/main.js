@@ -11,6 +11,8 @@ import router from './router';
 import translationEN from './translations.en';
 import translationKO from './translations.ko';
 
+import backend from './configs/backend';
+
 Vue.use(VueI18n);
 Vue.use(VueMaterial);
 Vue.use(VueResource);
@@ -38,7 +40,7 @@ const i18n = new VueI18n({
   },
 });
 
-Vue.http.options.root = 'http://165.132.106.71:4000';
+Vue.http.options.root = `http://${backend.ip}:${backend.port}`;
 
 /* eslint-disable no-new */
 new Vue({

@@ -1,0 +1,77 @@
+FROM openjdk:8u222-jdk
+
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+    python get-pip.py && \
+    rm get-pip.py
+
+RUN apt-get update && \
+    apt-get install -y python-dev build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev
+
+RUN apt-get install -y build-essential g++ python-dev autotools-dev libicu-dev build-essential \
+        libbz2-dev libboost-all-dev libgmp3-dev libcgal* libsparsehash-dev
+
+RUN wget https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 -O boost.tar.bz2 -q
+RUN tar xvf boost.tar.bz2 && \
+    cd boost_1_70_0 && \
+    ./bootstrap.sh --prefix=/usr/ && \
+    ./b2 && \
+    ./b2 install && \
+    cd / && \
+    rm -rf boost && rm -rf boost.tar.bz2
+RUN rm -rf boost_1_70_0
+
+RUN wget https://downloads.skewed.de/graph-tool/graph-tool-2.9.tar.bz2 -O graph-tool.tar.bz2 -q
+RUN pip install numpy scipy
+RUN apt-get install -y pkg-config libcairomm-1.0-dev
+RUN pip install https://github.com/pygobject/pycairo/releases/download/v1.13.1/pycairo-1.13.1.tar.gz
+RUN tar xvf graph-tool.tar.bz2 && \
+    cd graph-tool-2.9 && \
+    ./configure --enable-cgal-valgrind CXX="g++-6" && \
+    make -j8 && \
+    make install -j8 && \
+    cd / && \
+    rm -rf graph-tool-2.9 && rm -rf graph-tool.tar.bz2
+
+RUN pip install \
+        beautifulsoup4 \
+        boto \
+        cachetools \
+        certifi \
+        chardet \
+        cycler \
+        DateTime \
+        decorator \
+        google-auth \
+        html5lib \
+        idna \
+        lxml \
+        matplotlib \
+        multiprocessing \
+        networkx \
+        numpy \
+        opencv-python \
+        pandas \
+        Pillow \
+        psutil \
+        pyasn1 \
+        pyasn1-modules \
+        PyMySQL \
+        pyparsing \
+        python-dateutil \
+        python-memcached \
+        pytz \
+        requests \
+        rsa \
+        scikit-learn \
+        scipy \
+        setuptools \
+        six \
+        sklearn \
+        urllib3 \
+        wheel
+
+RUN mkdir -p /home/teambio/Capstone-2017-2/gena
+WORKDIR /home/teambio/Capstone-2017-2/gena
+
+COPY . /home/teambio/Capstone-2017-2/gena
+WORKDIR /home/teambio/Capstone-2017-2/gena/codes/job

@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  front:
+    image: arbc139/genax-front:1.0.0
+    ports:
+      - 8080:8080
+    command: ["http-server", "dist", "-p", "8080"]
+  back:
+    image: arbc139/genax-back:1.0.0
+    network_mode: "host"
+    environment:
+      - PORT=4000
+    command: ["npm", "start", "--", "--user=teambio"]
+  jobroller:
+    image: arbc139/genax-jr:1.0.0
+    volumes:
+      - ./gena/weka-3-8-1:/home/teambio/Capstone-2017-2/gena/weka-3-8-1
+      - ./gena/files:/home/teambio/Capstone-2017-2/gena/files
+      - ./gena/codes/log:/home/teambio/Capstone-2017-2/gena/codes/log
+    network_mode: "host"
+    command: ["bash", "job_roller.sh", "teambio"]
+
