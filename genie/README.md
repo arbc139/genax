@@ -36,3 +36,9 @@ $ npm start -- --user="DBUser" --password="DBPassword"
 ## Database
 `MySQL`을 사용하고 있습니다. \
 Database connection 설정은 `config/`와 `database.js` 에서 관리합니다.
+
+## Docker
+다음 command로 Docker Image를 생성할 수 있습니다.
+```bash
+$ docker build -t arbc139/genax-back:1.0.0 .
+```
