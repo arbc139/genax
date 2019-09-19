@@ -18,3 +18,8 @@ From the paper-gene relationship, GENAX creates edges of the gene network. Genes
 
 ## Network Analysis
 After network building is complete, there are two networks generated. One is the co-occurring genes only network and the other is the co-occurring genes plus single-occurring genes network. With these two networks, GENAX calculates the centrality of each gene node. The user can obtain the gene scores from the centrality calculation. The user can also access the references from which the genes are collected.
+
+## How to Run on Docker
+```bash
+$ docker-compose up -d
+```
