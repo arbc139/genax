@@ -21,5 +21,6 @@ After network building is complete, there are two networks generated. One is the
 
 ## How to Run on Docker
 ```bash
+# After making backoffice, genie docker images
 $ docker-compose up -d
 ```
