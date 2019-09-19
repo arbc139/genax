@@ -53,5 +53,5 @@ $ sudo serve -s dist -p 80
 ## How To Make a Docker Image
 ```bash
 # Make backoffice images
-$ docker build -t arbc139/genax-backoffice:1.0.0 .
+$ docker build -t arbc139/genax-front:1.0.0 .
 ```
