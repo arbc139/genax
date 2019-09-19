@@ -1,5 +1,5 @@
 # Backoffice
-분석 서비스 웹사이트
+Genax Web Frontend Application
 
 ## Framework
 `Vue.js`
@@ -48,4 +48,10 @@ $ serve -s dist
 
 $ sudo serve -s dist -p 80
 # Backoffice will listening a request in '80' port...
+```
+
+## How To Make a Docker Image
+```bash
+# Make backoffice images
+$ docker build -t arbc139/genax-backoffice:1.0.0 .
 ```
