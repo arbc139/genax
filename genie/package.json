@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "http_start": "node ./bin/www",
+    "https_start": "node ./bin/www_https"
   },
   "dependencies": {
     "bluebird": "^3.5.0",

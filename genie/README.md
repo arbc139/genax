@@ -42,3 +42,13 @@ Database connection 설정은 `config/`와 `database.js` 에서 관리합니다.
 ```bash
 $ docker build -t arbc139/genax-back:1.0.0 .
 ```
+
+## SSL
+directory 'bin/ssl' is https related.
+Please make private key and update public key before build up.
+```bash
+# Make private key
+openssl genrsa -out bin/ssl/key.pem 1024
+# Make public key
+openssl req -x509 -new -key bin/ssl/key.pem > bin/ssl/cert.pem
+```

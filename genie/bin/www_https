@@ -6,7 +6,8 @@
 
 const app = require('../main');
 var debug = require('debug')('genie:server');
-var http = require('http');
+var https = require('https');
+var fs = require('fs');
 
 /**
  * Get port from environment and store in Express.
@@ -16,10 +17,15 @@ var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ * Create HTTPS server.
  */
 
-var server = http.createServer(app);
+var httpsOptions = {
+  key: fs.readFileSync('./bin/ssl/key.pem'),
+  cert: fs.readFileSync('./bin/ssl/cert.pem'),
+};
+
+var server = https.createServer(httpsOptions, app);
 
 /**
  * Listen on provided port, on all network interfaces.

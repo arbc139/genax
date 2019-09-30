@@ -6,10 +6,16 @@ services:
     ports:
       - 8080:8080
     command: ["http-server", "dist", "-p", "8080"]
-  back:
+  back-http:
     image: arbc139/genax-back:1.0.0
     network_mode: "host"
     environment:
       - PORT=4000
-    command: ["npm", "start", "--", "--user=teambio"]
+    command: ["npm", "run", "http_start", "--", "--user=teambio"]
+  back-https:
+    image: arbc139/genax-back:1.0.0
+    network_mode: "host"
+    environment:
+      - PORT=4440
+    command: ["npm", "run", "https_start", "--", "--user=teambio"]
 
