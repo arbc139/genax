@@ -12,3 +12,4 @@ RUN npm install --production --silent && \
 COPY . /app/
 
 EXPOSE 4000
+EXPOSE 4440
